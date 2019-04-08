@@ -4,7 +4,7 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -17,7 +17,19 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 2vh;
 }
+
+
+.title {
+  background-color: #282c34;
+  color: rgb(203, 242, 8);
+  border-color: #61dafb;
+  border-bottom-style: solid;
+  margin-bottom: 5vh;
+}
+
+
 
 .App-link {
   color: #61dafb;
