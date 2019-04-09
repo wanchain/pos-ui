@@ -43,3 +43,96 @@
     transform: rotate(360deg);
   }
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 0.3fr 0.4fr 1fr 0.3fr 1fr 1fr;
+  grid-template-areas: "title title title title title title" "blkN0Title blkNoValue totalstkTitle totalstkValue everageTitle everagetValue" "minerCntTitle minerCntValue delegatorCntTitle delegatorCntValue delegatePartCntTitle delegatePartCntValue" ". . . . . ." "calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle" "calcMiner calcMiner calcMiner calcMiner calcMiner calcMiner" "calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle" "calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate" ". . . . . .";
+
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+  padding: 2vh;
+}
+
+.title { grid-area: title; }
+
+.blkN0Title { grid-area: blkN0Title; }
+
+.blkNoValue { grid-area: blkNoValue; }
+
+.totalstkTitle { grid-area: totalstkTitle; }
+
+.totalstkValue { grid-area: totalstkValue; }
+
+.everageTitle { grid-area: everageTitle; }
+
+.everagetValue { grid-area: everagetValue; }
+
+.minerCntTitle { grid-area: minerCntTitle; }
+
+.minerCntValue { grid-area: minerCntValue; }
+
+.delegatorCntTitle { grid-area: delegatorCntTitle; }
+
+.delegatorCntValue { grid-area: delegatorCntValue; }
+
+.delegatePartCntTitle { grid-area: delegatePartCntTitle; }
+
+.delegatePartCntValue { grid-area: delegatePartCntValue; }
+
+.calculateMinerTitle { grid-area: calculateMinerTitle; }
+
+.calculateDelegatorTitle { grid-area: calculateDelegatorTitle; }
+
+.calcDelegate {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". inputDelegate inputDelegateTime inputDelegateFeerate deleButton totalDelegateReward totalDelegateRewardValue deleRewardRate deleRewardRateValue .";
+  grid-area: calcDelegate;
+}
+
+.inputDelegate { grid-area: inputDelegate; }
+
+.inputDelegateTime { grid-area: inputDelegateTime; }
+
+.inputDelegateFeerate { grid-area: inputDelegateFeerate; }
+
+.deleButton { grid-area: deleButton; }
+
+.totalDelegateReward { grid-area: totalDelegateReward; }
+
+.totalDelegateRewardValue { grid-area: totalDelegateRewardValue; }
+
+.deleRewardRate { grid-area: deleRewardRate; }
+
+.deleRewardRateValue { grid-area: deleRewardRateValue; }
+
+.calcMiner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". lockAmount lockTime . calcButton totalReward totalRewardValue rewardRate rewardRateValue .";
+  grid-area: calcMiner;
+}
+
+.lockAmount { grid-area: lockAmount; }
+
+.lockTime { grid-area: lockTime; }
+
+.calcButton { grid-area: calcButton; }
+
+.totalReward { grid-area: totalReward; }
+
+.totalRewardValue { grid-area: totalRewardValue; }
+
+.rewardRate { grid-area: rewardRate; }
+
+.rewardRateValue { grid-area: rewardRateValue; }
