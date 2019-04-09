@@ -101,7 +101,7 @@ class App extends Component {
         <div className="delegatorCntValue">{this.state.delegatorCount}</div>
         <div className="delegatePartCntTitle">Delegator Participant:</div>
         <div className="delegatePartCntValue">{this.state.delePartiCnt}</div>
-        <div className="calculateMinerTitle">Miner reward calculator:</div>
+        <div className="calculateMinerTitle">Miner reward calculate:</div>
         <div className="calcMiner">
           <div className="lockAmount">
             <input placeholder="Lock Amount"
@@ -119,7 +119,7 @@ class App extends Component {
           <div className="rewardRate">Reward Rate:</div>
           <div className="rewardRateValue">{this.state.minerRewardRate}</div>
         </div>
-        <div className="calculateDelegatorTitle">Send delegate reward calculator:</div>
+        <div className="calculateDelegatorTitle">Delegate reward calculate:</div>
         <div className="calcDelegate">
           <div className="inputDelegate">
             <input placeholder="Lock Amount"
