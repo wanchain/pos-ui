@@ -1,5 +1,7 @@
 A Demo UI for Wanchain POS Incentive Calculator.
 
+# How to use to see the pos-ui-server's README.md
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

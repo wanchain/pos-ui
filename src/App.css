@@ -2,53 +2,29 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 20vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  padding: 2vh;
-}
-
-
 .title {
   background-color: #282c34;
-  color: rgb(203, 242, 8);
-  border-color: #61dafb;
-  border-bottom-style: solid;
+  color: rgb(8, 226, 242);
   margin-bottom: 5vh;
-}
-
-
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: calc(10px + 3vmin);
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 0.3fr 0.4fr 1fr 0.3fr 1fr 1fr;
-  grid-template-areas: "title title title title title title" "blkN0Title blkNoValue totalstkTitle totalstkValue everageTitle everagetValue" "minerCntTitle minerCntValue delegatorCntTitle delegatorCntValue delegatePartCntTitle delegatePartCntValue" ". . . . . ." "calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle" "calcMiner calcMiner calcMiner calcMiner calcMiner calcMiner" "calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle" "calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate" ". . . . . .";
+  grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 0.3fr 0.4fr 1fr 0.3fr 1fr 0.3fr 1fr 1fr;
+  grid-template-areas: "title title title title title title" 
+  "blkN0Title blkNoValue totalstkTitle totalstkValue everageTitle everagetValue" 
+  "minerCntTitle minerCntValue delegatorCntTitle delegatorCntValue delegatePartCntTitle delegatePartCntValue" 
+  "epochIDTitle epochID slotIDTitle slotID epochPercentTitle epochPercent" 
+  ". . . . . ."
+  "calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle" 
+  "calcMiner calcMiner calcMiner calcMiner calcMiner calcMiner" 
+  "calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle" 
+  "calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate" 
+  "addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle" 
+  "addrIncentive addrIncentive addrIncentive addrIncentive addrIncentive addrIncentive" 
+  ". . . . . .";
 
   text-align: center;
   background-color: #282c34;
@@ -86,6 +62,18 @@
 .delegatePartCntTitle { grid-area: delegatePartCntTitle; }
 
 .delegatePartCntValue { grid-area: delegatePartCntValue; }
+
+.epochIDTitle { grid-area: epochIDTitle; }
+
+.epochID { grid-area: epochID; }
+
+.slotIDTitle { grid-area: slotIDTitle; }
+
+.slotID { grid-area: slotID; }
+
+.epochPercentTitle { grid-area: epochPercentTitle; }
+
+.epochPercent { grid-area: epochPercent; }
 
 .calculateMinerTitle { grid-area: calculateMinerTitle; }
 
@@ -136,3 +124,26 @@
 .rewardRate { grid-area: rewardRate; }
 
 .rewardRateValue { grid-area: rewardRateValue; }
+
+
+.addrIncentiveTitle { grid-area: addrIncentiveTitle; }
+
+.addrIncentive {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". inputAddress inputStartEpoch inputEndEpoch addrButton addrReward addrRewardValue . . .";
+  grid-area: addrIncentive;
+}
+
+.inputAddress { grid-area: inputAddress; }
+
+.inputStartEpoch { grid-area: inputStartEpoch; }
+
+.inputEndEpoch { grid-area: inputEndEpoch; }
+
+.addrButton { grid-area: addrButton; }
+
+.addrReward { grid-area: addrReward; }
+
+.addrRewardValue { grid-area: addrRewardValue; }

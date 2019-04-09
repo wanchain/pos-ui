@@ -17,6 +17,10 @@ class App extends Component {
       minerRewardRate: 'N/A',
       delegateTotalReward: 'N/A',
       delegateRewardRate: 'N/A',
+      addrReward: 'N/A',
+      epochID: 0,
+      slotID: 0,
+      epochPercent: 0,
     }
   }
 
@@ -29,6 +33,9 @@ class App extends Component {
         minerCount: result.minerCount,
         delegatorCount: result.delegatorCount,
         delePartiCnt: result.delePartiCnt,
+        epochID: result.epochID,
+        slotID: result.slotID,
+        epochPercent: result.epochPercent,
       });
     }.bind(this));
   }
@@ -85,6 +92,26 @@ class App extends Component {
       }.bind(this));
   }
 
+  addrIncentiveCheck() {
+    console.log('addrIncentiveCheck')
+    this.setState({
+      addrReward: 'Waiting',
+    })
+
+    let address = this.addr.value
+    let startepoch = this.startEpoch.value
+    let endepoch = this.endEpoch.value
+
+    this.serverRequest = $.get(serverUrl + 'addrIncentiveCheck?address=' +
+      address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
+      function (result) {
+        console.log(result)
+        this.setState({
+          addrReward: result.addrReward.toFixed(2),
+        });
+      }.bind(this));
+  }
+
   render() {
     return (
       <div className="grid-container">
@@ -101,6 +128,12 @@ class App extends Component {
         <div className="delegatorCntValue">{this.state.delegatorCount}</div>
         <div className="delegatePartCntTitle">Delegator Participant:</div>
         <div className="delegatePartCntValue">{this.state.delePartiCnt}</div>
+        <div className="epochIDTitle">Current Epoch ID:</div>
+        <div className="epochID">{this.state.epochID}</div>
+        <div className="slotIDTitle">Current Slot ID:</div>
+        <div className="slotID">{this.state.slotID}</div>
+        <div className="epochPercentTitle">Epoch Percent:</div>
+        <div className="epochPercent">{this.state.epochPercent}%</div>
         <div className="calculateMinerTitle">Miner reward calculate:</div>
         <div className="calcMiner">
           <div className="lockAmount">
@@ -139,6 +172,26 @@ class App extends Component {
           <div className="totalDelegateRewardValue">{this.state.delegateTotalReward}</div>
           <div className="deleRewardRate">Reward Rate:</div>
           <div className="deleRewardRateValue">{this.state.delegateRewardRate}</div>
+        </div>
+
+        <div className="addrIncentiveTitle">Address Incentive calculate:</div>
+        <div className="addrIncentive">
+          <div className="inputAddress">
+            <input placeholder="Your Address"
+              ref={(input) => { this.addr = input }}
+            /></div>
+          <div className="inputStartEpoch">
+            <input placeholder="Start Epoch"
+              ref={(input) => { this.startEpoch = input }}
+            /></div>
+          <div className="inputEndEpoch">
+            <input placeholder="End Epoch"
+              ref={(input) => { this.endEpoch = input }}
+            /></div>
+          <div className="addrButton">
+            <button onClick={this.addrIncentiveCheck.bind(this)}>Check Incentive</button></div>
+          <div className="addrReward">Total Reward:</div>
+          <div className="addrRewardValue">{this.state.addrReward}</div>
         </div>
       </div>
     );
