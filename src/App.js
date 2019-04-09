@@ -21,6 +21,9 @@ class App extends Component {
       epochID: 0,
       slotID: 0,
       epochPercent: 'N/A',
+      addrMine: 'N/A',
+      addrEp: 'N/A',
+      addrRp: 'N/A',
     }
   }
 
@@ -112,6 +115,30 @@ class App extends Component {
       }.bind(this));
   }
 
+  addrActivityCheck() {
+    console.log('addrActivityCheck')
+    this.setState({
+      addrMine: 'Waiting',
+      addrEp: 'Waiting',
+      addrRp: 'Waiting',
+    })
+
+    let address = this.addrAct.value
+    let startepoch = this.startEpochAct.value
+    let endepoch = this.endEpochAct.value
+
+    this.serverRequest = $.get(serverUrl + 'addrActivityCheck?address=' +
+      address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
+      function (result) {
+        console.log(result)
+        this.setState({
+          addrMine: result.addrMine,
+          addrEp: result.addrEp,
+          addrRp: result.addrRp,
+        });
+      }.bind(this));
+  }
+
   render() {
     return (
       <div className="grid-container">
@@ -174,7 +201,7 @@ class App extends Component {
           <div className="deleRewardRateValue">{this.state.delegateRewardRate}</div>
         </div>
 
-        <div className="addrIncentiveTitle">Address Incentive calculate:</div>
+        <div className="addrIncentiveTitle">Address Incentive Check:</div>
         <div className="addrIncentive">
           <div className="inputAddress">
             <input placeholder="Your Address"
@@ -192,6 +219,28 @@ class App extends Component {
             <button onClick={this.addrIncentiveCheck.bind(this)}>Check Incentive</button></div>
           <div className="addrReward">Total Reward:</div>
           <div className="addrRewardValue">{this.state.addrReward}</div>
+        </div>
+
+        <div className="addrActivityTitle">Address Activity Check:</div>
+        <div className="addrActivity">
+          <div className="actAddress">
+            <input placeholder="Your Address"
+              ref={(input) => { this.addrAct = input }}
+            /></div>
+          <div className="actStartEpoch">
+            <input placeholder="Start Epoch"
+              ref={(input) => { this.startEpochAct = input }}
+            /></div>
+          <div className="actEndEpoch">
+            <input placeholder="End Epoch"
+              ref={(input) => { this.endEpochAct = input }}
+            /></div>
+          <div className="actButton">
+            <button onClick={this.addrActivityCheck.bind(this)}>Check Activity</button></div>
+          <div className="actMine">Total Mine:</div>
+          <div className="actMineValue">{this.state.addrMine}</div>
+          <div className="actEp">Ep / Rp:</div>
+          <div className="actEpValue">{this.state.addrEp} / {this.state.addrRp}</div>
         </div>
       </div>
     );

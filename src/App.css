@@ -12,7 +12,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 0.3fr 0.4fr 1fr 0.3fr 1fr 0.3fr 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 0.3fr 0.4fr 0.5fr 0.3fr 0.5fr 0.3fr 0.5fr 0.3fr 0.5fr 1fr;
   grid-template-areas: "title title title title title title" 
   "blkN0Title blkNoValue totalstkTitle totalstkValue everageTitle everagetValue" 
   "minerCntTitle minerCntValue delegatorCntTitle delegatorCntValue delegatePartCntTitle delegatePartCntValue" 
@@ -24,6 +24,8 @@
   "calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate" 
   "addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle" 
   "addrIncentive addrIncentive addrIncentive addrIncentive addrIncentive addrIncentive" 
+  "addrActivityTitle addrActivityTitle addrActivityTitle addrActivityTitle addrActivityTitle addrActivityTitle" 
+  "addrActivity addrActivity addrActivity addrActivity addrActivity addrActivity" 
   ". . . . . .";
 
   text-align: center;
@@ -75,9 +77,9 @@
 
 .epochPercent { grid-area: epochPercent; }
 
-.calculateMinerTitle { grid-area: calculateMinerTitle; }
+.calculateMinerTitle { grid-area: calculateMinerTitle;  margin-top: 5vh;}
 
-.calculateDelegatorTitle { grid-area: calculateDelegatorTitle; }
+.calculateDelegatorTitle { grid-area: calculateDelegatorTitle;  margin-top: 5vh;}
 
 .calcDelegate {
   display: grid;
@@ -125,8 +127,7 @@
 
 .rewardRateValue { grid-area: rewardRateValue; }
 
-
-.addrIncentiveTitle { grid-area: addrIncentiveTitle; }
+.addrIncentiveTitle { grid-area: addrIncentiveTitle;  margin-top: 5vh;}
 
 .addrIncentive {
   display: grid;
@@ -147,3 +148,34 @@
 .addrReward { grid-area: addrReward; }
 
 .addrRewardValue { grid-area: addrRewardValue; }
+
+/* addrActivity  */
+.addrActivityTitle { grid-area: addrActivityTitle; margin-top: 5vh;}
+
+.addrActivity {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". actAddress actStartEpoch actEndEpoch actButton actMine actMineValue actEp actEpValue .";
+  grid-area: addrActivity;
+}
+
+.actAddress { grid-area: actAddress; }
+
+.actStartEpoch { grid-area: actStartEpoch; }
+
+.actEndEpoch { grid-area: actEndEpoch; }
+
+.actButton { grid-area: actButton; }
+
+.actMine { grid-area: actMine; }
+
+.actMineValue { grid-area: actMineValue; }
+
+.actEp { grid-area: actEp; }
+
+.actEpValue { grid-area: actEpValue; }
+
+.actRp { grid-area: actRp; }
+
+.actRpValue { grid-area: actRpValue; }
