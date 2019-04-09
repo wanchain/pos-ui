@@ -20,7 +20,7 @@ class App extends Component {
       addrReward: 'N/A',
       epochID: 0,
       slotID: 0,
-      epochPercent: 0,
+      epochPercent: 'N/A',
     }
   }
 
@@ -35,7 +35,7 @@ class App extends Component {
         delePartiCnt: result.delePartiCnt,
         epochID: result.epochID,
         slotID: result.slotID,
-        epochPercent: result.epochPercent,
+        epochPercent: result.epochPercent.toFixed(2),
       });
     }.bind(this));
   }
