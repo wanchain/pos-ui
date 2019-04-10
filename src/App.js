@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import $ from 'jquery';
 
-const serverUrl = 'http://localhost:8000/'
+console.log(window.location.href)
+
+let serverUrl = window.location.href
+serverUrl = serverUrl.replace("3000", "8000")
+
+console.log(serverUrl)
 
 class App extends Component {
   constructor(props) {
@@ -25,11 +30,14 @@ class App extends Component {
       addrEp: 'N/A',
       addrRp: 'N/A',
     }
+
+    
   }
 
   getInfo() {
     this.serverRequest = $.get(serverUrl + 'info', function (result) {
       console.log(result)
+      if(!result["blockNumber"]) { return }
       this.setState({
         blockNumber: result.blockNumber,
         totalStake: result.totalStake,
