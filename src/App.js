@@ -29,6 +29,7 @@ class App extends Component {
       addrMine: 'N/A',
       addrEp: 'N/A',
       addrRp: 'N/A',
+      yearReward: 0,
     }
 
     
@@ -47,13 +48,14 @@ class App extends Component {
         epochID: result.epochID,
         slotID: result.slotID,
         epochPercent: result.epochPercent.toFixed(2),
+        yearReward: result.yearReward,
       });
     }.bind(this));
   }
 
   componentDidMount() {
     this.getInfo()
-    this.timer = setInterval(this.getInfo.bind(this), 5000, null)
+    this.timer = setInterval(this.getInfo.bind(this), 1000, null)
   }
 
   componentWillUnmount() {
@@ -156,7 +158,7 @@ class App extends Component {
         <div className="totalstkTitle">Total Stake:</div>
         <div className="totalstkValue">{this.state.totalStake}</div>
         <div className="everageTitle">Average Reward:</div>
-        <div className="everagetValue">{2100000 * 100 / (this.state.totalStake)}%</div>
+        <div className="everagetValue">{this.state.yearReward * 100 / this.state.totalStake}%</div>
         <div className="minerCntTitle">Miner Count:</div>
         <div className="minerCntValue">{this.state.minerCount}</div>
         <div className="delegatorCntTitle">Delegator Count:</div>
