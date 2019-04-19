@@ -14,9 +14,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 0.3fr 0.4fr 0.5fr 0.3fr 0.5fr 0.3fr 0.5fr 0.3fr 0.5fr 1fr;
   grid-template-areas: "title title title title title title" 
-  "blkN0Title blkNoValue totalstkTitle totalstkValue everageTitle everagetValue" 
-  "minerCntTitle minerCntValue delegatorCntTitle delegatorCntValue delegatePartCntTitle delegatePartCntValue" 
-  "epochIDTitle epochID slotIDTitle slotID epochPercentTitle epochPercent" 
+  "board board board board board board" 
   ". . . . . ."
   "calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle" 
   "calcMiner calcMiner calcMiner calcMiner calcMiner calcMiner" 
@@ -41,41 +39,7 @@
 
 .title { grid-area: title; }
 
-.blkN0Title { grid-area: blkN0Title; }
-
-.blkNoValue { grid-area: blkNoValue; }
-
-.totalstkTitle { grid-area: totalstkTitle; }
-
-.totalstkValue { grid-area: totalstkValue; }
-
-.everageTitle { grid-area: everageTitle; }
-
-.everagetValue { grid-area: everagetValue; }
-
-.minerCntTitle { grid-area: minerCntTitle; }
-
-.minerCntValue { grid-area: minerCntValue; }
-
-.delegatorCntTitle { grid-area: delegatorCntTitle; }
-
-.delegatorCntValue { grid-area: delegatorCntValue; }
-
-.delegatePartCntTitle { grid-area: delegatePartCntTitle; }
-
-.delegatePartCntValue { grid-area: delegatePartCntValue; }
-
-.epochIDTitle { grid-area: epochIDTitle; }
-
-.epochID { grid-area: epochID; }
-
-.slotIDTitle { grid-area: slotIDTitle; }
-
-.slotID { grid-area: slotID; }
-
-.epochPercentTitle { grid-area: epochPercentTitle; }
-
-.epochPercent { grid-area: epochPercent; }
+.board { grid-area: board; border:1px solid #F00}
 
 .calculateMinerTitle { grid-area: calculateMinerTitle;  margin-top: 5vh;}
 

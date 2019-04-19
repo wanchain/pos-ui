@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import $ from 'jquery';
 
+import Board from './board.js'
+
 console.log(window.location.href)
 
 let serverUrl = window.location.href
@@ -153,24 +155,7 @@ class App extends Component {
     return (
       <div className="grid-container">
         <div className="title">Wanchain POS Incentive Calculator</div>
-        <div className="blkN0Title">Block Number:</div>
-        <div className="blkNoValue">{this.state.blockNumber}</div>
-        <div className="totalstkTitle">Total Stake:</div>
-        <div className="totalstkValue">{this.state.totalStake}</div>
-        <div className="everageTitle">Average Reward:</div>
-        <div className="everagetValue">{this.state.yearReward * 100 / this.state.totalStake}%</div>
-        <div className="minerCntTitle">Miner Count:</div>
-        <div className="minerCntValue">{this.state.minerCount}</div>
-        <div className="delegatorCntTitle">Delegator Count:</div>
-        <div className="delegatorCntValue">{this.state.delegatorCount}</div>
-        <div className="delegatePartCntTitle">Delegator Participant:</div>
-        <div className="delegatePartCntValue">{this.state.delePartiCnt}</div>
-        <div className="epochIDTitle">Current Epoch ID:</div>
-        <div className="epochID">{this.state.epochID}</div>
-        <div className="slotIDTitle">Current Slot ID:</div>
-        <div className="slotID">{this.state.slotID}</div>
-        <div className="epochPercentTitle">Epoch Percent:</div>
-        <div className="epochPercent">{this.state.epochPercent}%</div>
+        <Board className="board"/>
         <div className="calculateMinerTitle">Miner reward calculate:</div>
         <div className="calcMiner">
           <div className="lockAmount">

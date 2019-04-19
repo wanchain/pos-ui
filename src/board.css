@@ -1,0 +1,46 @@
+
+.board {
+  border:1px solid #F00;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: " b1 b2 b3 b4 b5 b6" "b7 b8 b9 b10 b11 b12" "b13 b14 b15 b16 b17 b18";
+  grid-area: board;
+}
+
+
+.blkN0Title { grid-area: b1; border:1px solid #F00;}
+
+.blkNoValue { grid-area: b2; border:1px solid #F00;}
+
+.totalstkTitle { grid-area: b3; border:1px solid #F00;}
+
+.totalstkValue { grid-area: b4; border:1px solid #F00;}
+
+.everageTitle { grid-area: b5; border:1px solid #F00;}
+
+.everagetValue { grid-area: b6; border:1px solid #F00;}
+
+.minerCntTitle { grid-area: b7; border:1px solid #F00;}
+
+.minerCntValue { grid-area: b8; border:1px solid #F00;}
+
+.delegatorCntTitle { grid-area: b9; border:1px solid #F00;}
+
+.delegatorCntValue { grid-area: b10; border:1px solid #F00;}
+
+.delegatePartCntTitle { grid-area: b11; border:1px solid #F00;}
+
+.delegatePartCntValue { grid-area: b12; border:1px solid #F00;}
+
+.epochIDTitle { grid-area: b13; border:1px solid #F00;}
+
+.epochID { grid-area: b14; border:1px solid #F00;}
+
+.slotIDTitle { grid-area: b15; border:1px solid #F00;}
+
+.slotID { grid-area: b16; border:1px solid #F00;}
+
+.epochPercentTitle { grid-area: b17; border:1px solid #F00;}
+
+.epochPercent { grid-area: b18; border:1px solid #F00;}
