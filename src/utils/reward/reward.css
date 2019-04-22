@@ -1,0 +1,50 @@
+.Reward {
+  height: 30vh;
+  border-radius: 2vh;
+  background-color: rgb(50, 66, 99);
+}
+
+.Reward div {
+  padding: 1vh;
+  color: white;
+}
+
+.rewardTitle {
+  border-bottom: 1px solid rgb(174, 167, 167);
+}
+
+.rewardGrid {
+  height: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "i o";
+}
+
+.i {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "i1 i11" "i2 i21" "i3 i31" "bt bt";
+  grid-area: i;
+}
+
+.i1 { grid-area: i1; }
+
+.i2 { grid-area: i2; }
+
+.i3 { grid-area: i3; }
+
+.bt { grid-area: bt; }
+
+.i11 { grid-area: i11; }
+
+.i21 { grid-area: i21; }
+
+.i31 { grid-area: i31; }
+
+.o { 
+  grid-area: o; 
+  background-color: rgb(47, 78, 79);
+  border-radius: 2vh;
+}

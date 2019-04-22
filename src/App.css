@@ -1,145 +1,42 @@
 .App {
   text-align: center;
-}
-
-.title {
-  background-color: #282c34;
-  color: rgb(8, 226, 242);
-  margin-bottom: 5vh;
-  font-size: calc(10px + 3vmin);
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr 0.3fr 0.4fr 0.5fr 0.3fr 0.5fr 0.3fr 0.5fr 0.3fr 0.5fr 1fr;
-  grid-template-areas: "title title title title title title" 
-  "board board board board board board" 
-  ". . . . . ."
-  "calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle calculateMinerTitle" 
-  "calcMiner calcMiner calcMiner calcMiner calcMiner calcMiner" 
-  "calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle calculateDelegatorTitle" 
-  "calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate calcDelegate" 
-  "addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle addrIncentiveTitle" 
-  "addrIncentive addrIncentive addrIncentive addrIncentive addrIncentive addrIncentive" 
-  "addrActivityTitle addrActivityTitle addrActivityTitle addrActivityTitle addrActivityTitle addrActivityTitle" 
-  "addrActivity addrActivity addrActivity addrActivity addrActivity addrActivity" 
-  ". . . . . .";
-
-  text-align: center;
   background-color: #282c34;
   min-height: 100vh;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 1vmin);
-  color: white;
-  padding: 2vh;
+
+  display: grid;
+  grid-template-columns: 0.3fr 2.4fr 0.3fr;
+  grid-template-rows: 0.3fr 0.5fr 2.2fr;
+  grid-template-areas: "title title title" ". board ." ". utils .";
+}
+
+div {
+  /* border: 1px solid rgb(72, 6, 6); */
 }
 
 .title { grid-area: title; }
 
-.board { grid-area: board; border:1px solid #F00}
+.board { grid-area: board; }
 
-.calculateMinerTitle { grid-area: calculateMinerTitle;  margin-top: 5vh;}
+.utils { grid-area: utils; }
 
-.calculateDelegatorTitle { grid-area: calculateDelegatorTitle;  margin-top: 5vh;}
-
-.calcDelegate {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: ". inputDelegate inputDelegateTime inputDelegateFeerate deleButton totalDelegateReward totalDelegateRewardValue deleRewardRate deleRewardRateValue .";
-  grid-area: calcDelegate;
+.App button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 0.5vh 10vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 2vh;
 }
 
-.inputDelegate { grid-area: inputDelegate; }
-
-.inputDelegateTime { grid-area: inputDelegateTime; }
-
-.inputDelegateFeerate { grid-area: inputDelegateFeerate; }
-
-.deleButton { grid-area: deleButton; }
-
-.totalDelegateReward { grid-area: totalDelegateReward; }
-
-.totalDelegateRewardValue { grid-area: totalDelegateRewardValue; }
-
-.deleRewardRate { grid-area: deleRewardRate; }
-
-.deleRewardRateValue { grid-area: deleRewardRateValue; }
-
-.calcMiner {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: ". lockAmount lockTime . calcButton totalReward totalRewardValue rewardRate rewardRateValue .";
-  grid-area: calcMiner;
+.App button:hover {
+  background-color: rgb(17, 230, 191); /* Green */
+  color: white;
 }
 
-.lockAmount { grid-area: lockAmount; }
-
-.lockTime { grid-area: lockTime; }
-
-.calcButton { grid-area: calcButton; }
-
-.totalReward { grid-area: totalReward; }
-
-.totalRewardValue { grid-area: totalRewardValue; }
-
-.rewardRate { grid-area: rewardRate; }
-
-.rewardRateValue { grid-area: rewardRateValue; }
-
-.addrIncentiveTitle { grid-area: addrIncentiveTitle;  margin-top: 5vh;}
-
-.addrIncentive {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: ". inputAddress inputStartEpoch inputEndEpoch addrButton addrReward addrRewardValue . . .";
-  grid-area: addrIncentive;
+.App input {
+  width: 90%;
+  height: 90%;
 }
-
-.inputAddress { grid-area: inputAddress; }
-
-.inputStartEpoch { grid-area: inputStartEpoch; }
-
-.inputEndEpoch { grid-area: inputEndEpoch; }
-
-.addrButton { grid-area: addrButton; }
-
-.addrReward { grid-area: addrReward; }
-
-.addrRewardValue { grid-area: addrRewardValue; }
-
-/* addrActivity  */
-.addrActivityTitle { grid-area: addrActivityTitle; margin-top: 5vh;}
-
-.addrActivity {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: ". actAddress actStartEpoch actEndEpoch actButton actMine actMineValue actEp actEpValue .";
-  grid-area: addrActivity;
-}
-
-.actAddress { grid-area: actAddress; }
-
-.actStartEpoch { grid-area: actStartEpoch; }
-
-.actEndEpoch { grid-area: actEndEpoch; }
-
-.actButton { grid-area: actButton; }
-
-.actMine { grid-area: actMine; }
-
-.actMineValue { grid-area: actMineValue; }
-
-.actEp { grid-area: actEp; }
-
-.actEpValue { grid-area: actEpValue; }
-
-.actRp { grid-area: actRp; }
-
-.actRpValue { grid-area: actRpValue; }
