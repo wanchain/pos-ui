@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './utils.css';
-import Reward from './reward/reward'
+import RewardMiner from './reward/rewardMiner'
+import RewardDelegate from './reward/rewardDelegate'
+import RewardQuery from './query/rewardQuery'
+import ActivityQuery from './query/activityQuery'
+import UserHistoryQuery from './query/userHistoryQuery'
 
 class Utils extends Component {
   constructor(props) {
@@ -13,7 +17,11 @@ class Utils extends Component {
   render() {
     return (
       <div className="Utils">
-        <Reward />
+        <RewardMiner />
+        <RewardDelegate />
+        <RewardQuery />
+        <ActivityQuery />
+        <UserHistoryQuery />
       </div>
     );
   }

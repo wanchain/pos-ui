@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './reward.css';
+import './rewardMiner.css';
 
-class Reward extends Component {
+class RewardDelegate extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -17,11 +17,11 @@ class Reward extends Component {
           <div class="i">
             <div class="i1">Amount:</div>
             <div class="i2">Lock Time:</div>
-            <div class="i3"></div>
+            <div class="i3">Fee Rate:</div>
             <div class="bt"><button>Calculate</button></div>
-            <div class="i11"><input placeholder="Lock Amount"></input></div>
-            <div class="i21"><input placeholder="Lock Time"></input></div>
-            <div class="i31"></div>
+            <div class="i11"><input placeholder="Lock Amount In Wan Coins"></input></div>
+            <div class="i21"><input placeholder="Lock Time In Epochs"></input></div>
+            <div class="i31"><input placeholder="Delegator's Fee Rate 10 (%)"></input></div>
           </div>
           <div class="o"></div>
         </div>
@@ -30,4 +30,4 @@ class Reward extends Component {
   }
 }
 
-export default Reward;
+export default RewardDelegate;
