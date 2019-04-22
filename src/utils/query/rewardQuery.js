@@ -22,7 +22,7 @@ class RewardQuery extends Component {
 
     let address = this.addr.value
     let startepoch = this.startEpoch.value
-    let endepoch = Number(startepoch) + Number(this.lockEpoch.value) + 2
+    let endepoch = this.endEpoch.value
 
     this.serverRequest = $.get(serverUrl + 'addrIncentiveCheck?address=' +
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
@@ -41,17 +41,17 @@ class RewardQuery extends Component {
         <div class="rewardGrid">
           <div class="i">
             <div class="i1">Address:</div>
-            <div class="i2">Register Time:</div>
-            <div class="i3">Lock Time:</div>
+            <div class="i2">Start Epoch:</div>
+            <div class="i3">End Epoch:</div>
             <div class="bt"><button onClick={this.addrIncentiveCheck.bind(this)}>Calculate</button></div>
             <div class="i11"><input placeholder="Amount Address"
               ref={(input) => { this.addr = input }}
             ></input></div>
-            <div class="i21"><input placeholder="Register Time In Epochs"
+            <div class="i21"><input placeholder="Start Epoch"
               ref={(input) => { this.startEpoch = input }}
             ></input></div>
-            <div class="i31"><input placeholder="Lock Time In Epochs"
-              ref={(input) => { this.lockEpoch = input }}
+            <div class="i31"><input placeholder="End Epoch"
+              ref={(input) => { this.endEpoch = input }}
             ></input></div>
           </div>
           <div class="o">{JSON.stringify(this.state, null, 4)}</div>
