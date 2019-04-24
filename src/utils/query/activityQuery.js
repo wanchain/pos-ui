@@ -51,7 +51,7 @@ class ActivityQuery extends Component {
             <div class="i2">Start Epoch:</div>
             <div class="i3">End Epoch:</div>
             <div class="bt"><button onClick={this.addrActivityCheck.bind(this)}>Calculate</button></div>
-            <div class="i11"><input placeholder="Amount Address"
+            <div class="i11"><input placeholder="Account Address"
             ref={(input) => { this.addrAct = input }}
             
             ></input></div>

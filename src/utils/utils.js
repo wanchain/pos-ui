@@ -5,6 +5,7 @@ import RewardDelegate from './reward/rewardDelegate'
 import RewardQuery from './query/rewardQuery'
 import ActivityQuery from './query/activityQuery'
 import UserHistoryQuery from './query/userHistoryQuery'
+import ValidatorInfoQuery from './query/validatorInfoQuery'
 
 class Utils extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Utils extends Component {
         <RewardQuery />
         <ActivityQuery />
         <UserHistoryQuery />
+        <ValidatorInfoQuery />
       </div>
     );
   }

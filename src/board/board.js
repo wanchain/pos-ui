@@ -26,6 +26,8 @@ class Board extends Component {
       slotID: 0,
       epochPercent: 'N/A',
       yearReward: 0,
+      curEpochStartTime: 0,
+      nextEpochStartTime: 0,
     }
   }
 
@@ -43,6 +45,8 @@ class Board extends Component {
         slotID: result.slotID,
         epochPercent: result.epochPercent.toFixed(2),
         yearReward: result.yearReward,
+        curEpochStartTime: result.curEpochStartTime,
+        nextEpochStartTime: result.nextEpochStartTime,
       });
     }.bind(this));
   }
@@ -78,6 +82,10 @@ class Board extends Component {
         <div className="slotID">{this.state.slotID}</div>
         <div className="epochPercentTitle">Epoch Percent:</div>
         <div className="epochPercent">{this.state.epochPercent}%</div>
+        <div className="curEpochTime">Current Epoch Start:</div>
+        <div className="curEpochTimeValue">{(new Date(this.state.curEpochStartTime*1000)).toLocaleString()}</div>
+        <div className="nextEpochTime">Next Epoch Start:</div>
+        <div className="nextEpochTimeValue">{(new Date(this.state.nextEpochStartTime*1000)).toLocaleString()}</div>
       </div>
     );
   }

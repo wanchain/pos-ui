@@ -44,7 +44,7 @@ class RewardQuery extends Component {
             <div class="i2">Start Epoch:</div>
             <div class="i3">End Epoch:</div>
             <div class="bt"><button onClick={this.addrIncentiveCheck.bind(this)}>Calculate</button></div>
-            <div class="i11"><input placeholder="Amount Address"
+            <div class="i11"><input placeholder="Account Address"
               ref={(input) => { this.addr = input }}
             ></input></div>
             <div class="i21"><input placeholder="Start Epoch"

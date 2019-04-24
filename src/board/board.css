@@ -2,8 +2,8 @@
 .Board {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "b1 b2 b3 b4 b5 b6" "b7 b8 b9 b10 b11 b12" "b13 b14 b15 b16 b17 b18";
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "b1 b2 b3 b4 b5 b6" "b7 b8 b9 b10 b11 b12" "b13 b14 b15 b16 b17 b18" "b19 b20 b21 b22 . .";
   grid-area: board;
   height: 100%;
 
@@ -57,3 +57,11 @@
 .epochPercentTitle { grid-area: b17; }
 
 .epochPercent { grid-area: b18; }
+
+.curEpochTime {grid-area: b19; }
+
+.curEpochTimeValue {grid-area: b20; }
+
+.nextEpochTime {grid-area: b21; }
+
+.nextEpochTimeValue {grid-area: b22; }
