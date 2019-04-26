@@ -32,6 +32,7 @@ class Board extends Component {
   }
 
   getInfo() {
+    console.log("getInfo called")
     this.serverRequest = $.get(serverUrl + 'info', function (result) {
       console.log(result)
       if(!result["blockNumber"]) { return }
@@ -52,11 +53,13 @@ class Board extends Component {
   }
 
   componentDidMount() {
+    console.log("componentDidMount")
     this.getInfo()
-    this.timer = setInterval(this.getInfo.bind(this), 10000, null)
+    this.timer = setInterval(this.getInfo.bind(this), 5000, null)
   }
 
   componentWillUnmount() {
+    console.log("componentWillUnmount")
     clearInterval(this.timer)
     this.serverRequest.abort();
   }
