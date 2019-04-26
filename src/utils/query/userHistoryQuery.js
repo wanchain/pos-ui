@@ -40,27 +40,27 @@ class UserHistoryQuery extends Component {
   render() {
     return (
       <div className="Reward">
-        <div class="rewardTitle">Account's All Working History Query</div>
-        <div class="rewardGrid">
-          <div class="i">
-            <div class="i1">Address:</div>
-            <div class="i2">Start Epoch:</div>
-            <div class="i3">End Epoch:</div>
-            <div class="bt"><button onClick={this.addrWorkingHistoryQuery.bind(this)}>Calculate</button></div>
-            <div class="i11"><input placeholder="Account Address"
+        <div className="rewardTitle">Account's All Working History Query</div>
+        <div className="rewardGrid">
+          <div className="i">
+            <div className="i1">Address:</div>
+            <div className="i2">Start Epoch:</div>
+            <div className="i3">End Epoch:</div>
+            <div className="bt"><button onClick={this.addrWorkingHistoryQuery.bind(this)}>Calculate</button></div>
+            <div className="i11"><input placeholder="Account Address"
             ref={(input) => { this.addr = input }}
             
             ></input></div>
-            <div class="i21"><input placeholder="Query Start Epoch"
+            <div className="i21"><input placeholder="Query Start Epoch"
             ref={(input) => { this.startEpoch = input }}
             
             ></input></div>
-            <div class="i31"><input placeholder="Query End Epoch"
+            <div className="i31"><input placeholder="Query End Epoch"
             ref={(input) => { this.endEpoch = input }}
             
             ></input></div>
           </div>
-          <div class="o">{JSON.stringify(this.state, null, 4)}</div>
+          <div className="o">{JSON.stringify(this.state, null, 4)}</div>
         </div>
       </div>
     );

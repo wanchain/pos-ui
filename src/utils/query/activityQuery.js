@@ -44,27 +44,27 @@ class ActivityQuery extends Component {
   render() {
     return (
       <div className="Reward">
-        <div class="rewardTitle">Account's Working Activity Query</div>
-        <div class="rewardGrid">
-          <div class="i">
-            <div class="i1">Address:</div>
-            <div class="i2">Start Epoch:</div>
-            <div class="i3">End Epoch:</div>
-            <div class="bt"><button onClick={this.addrActivityCheck.bind(this)}>Calculate</button></div>
-            <div class="i11"><input placeholder="Account Address"
+        <div className="rewardTitle">Account's Working Activity Query</div>
+        <div className="rewardGrid">
+          <div className="i">
+            <div className="i1">Address:</div>
+            <div className="i2">Start Epoch:</div>
+            <div className="i3">End Epoch:</div>
+            <div className="bt"><button onClick={this.addrActivityCheck.bind(this)}>Calculate</button></div>
+            <div className="i11"><input placeholder="Account Address"
             ref={(input) => { this.addrAct = input }}
             
             ></input></div>
-            <div class="i21"><input placeholder="Start Epoch"
+            <div className="i21"><input placeholder="Start Epoch"
             ref={(input) => { this.startEpochAct = input }}
             
             ></input></div>
-            <div class="i31"><input placeholder="End Epoch"
+            <div className="i31"><input placeholder="End Epoch"
             ref={(input) => { this.endEpochAct = input }}
             
             ></input></div>
           </div>
-          <div class="o">{JSON.stringify(this.state, null, 4)}</div>
+          <div className="o">{JSON.stringify(this.state, null, 4)}</div>
         </div>
       </div>
     );

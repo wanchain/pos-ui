@@ -39,26 +39,26 @@ class RewardDelegate extends Component {
   render() {
     return (
       <div className="Reward">
-        <div class="rewardTitle">Send Delegate Reward Estimate</div>
-        <div class="rewardGrid">
-          <div class="i">
-            <div class="i1">Amount:</div>
-            <div class="i2">Lock Time:</div>
-            <div class="i3">Fee Rate:</div>
-            <div class="bt"><button onClick={this.delegateCalc.bind(this)}>Calculate</button></div>
-            <div class="i11"><input placeholder="Lock Amount In Wan Coins"
+        <div className="rewardTitle">Send Delegate Reward Estimate</div>
+        <div className="rewardGrid">
+          <div className="i">
+            <div className="i1">Amount:</div>
+            <div className="i2">Lock Time:</div>
+            <div className="i3">Fee Rate:</div>
+            <div className="bt"><button onClick={this.delegateCalc.bind(this)}>Calculate</button></div>
+            <div className="i11"><input placeholder="Lock Amount In Wan Coins"
               ref={(input) => { this.delegateAmount = input }}
             ></input></div>
-            <div class="i21"><input placeholder="Lock Time In Epochs"
+            <div className="i21"><input placeholder="Lock Time In Epochs"
               ref={(input) => { this.delegateLockTime = input }}
 
             ></input></div>
-            <div class="i31"><input placeholder="Delegator's Fee Rate 10 (%)"
+            <div className="i31"><input placeholder="Delegator's Fee Rate 10 (%)"
               ref={(input) => { this.delegateFeeRate = input }}
 
             ></input></div>
           </div>
-          <div class="o">{JSON.stringify(this.state, null, 4)}</div>
+          <div className="o">{JSON.stringify(this.state, null, 4)}</div>
         </div>
       </div>
     );

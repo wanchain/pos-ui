@@ -43,20 +43,20 @@ class ValidatorInfoQuery extends Component {
   render() {
     return (
       <div className="Reward">
-        <div class="rewardTitle">Validator Info Query</div>
-        <div class="rewardGrid">
-          <div class="i">
-            <div class="i1">Address:</div>
-            <div class="i2"></div>
-            <div class="i3"></div>
-            <div class="bt"><button onClick={this.validatorInfoQuery.bind(this)}>Calculate</button></div>
-            <div class="i11"><input placeholder="Validator Address"
+        <div className="rewardTitle">Validator Info Query</div>
+        <div className="rewardGrid">
+          <div className="i">
+            <div className="i1">Address:</div>
+            <div className="i2"></div>
+            <div className="i3"></div>
+            <div className="bt"><button onClick={this.validatorInfoQuery.bind(this)}>Calculate</button></div>
+            <div className="i11"><input placeholder="Validator Address"
               ref={(input) => { this.addr = input }}
             ></input></div>
-            <div class="i21"></div>
-            <div class="i31"></div>
+            <div className="i21"></div>
+            <div className="i31"></div>
           </div>
-          <div class="o">{JSON.stringify(this.state, null, 4)}</div>
+          <div className="o">{JSON.stringify(this.state, null, 4)}</div>
         </div>
       </div>
     );

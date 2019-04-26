@@ -4,7 +4,7 @@ import './title.css';
 class Title extends Component {
   render() {
     return (
-      <div class="title">
+      <div className="title">
         Wanchain PoS Utils
       </div>
     );
