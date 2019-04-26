@@ -53,7 +53,7 @@ class Board extends Component {
 
   componentDidMount() {
     this.getInfo()
-    this.timer = setInterval(this.getInfo.bind(this), 1000, null)
+    this.timer = setInterval(this.getInfo.bind(this), 10000, null)
   }
 
   componentWillUnmount() {
