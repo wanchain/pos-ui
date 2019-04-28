@@ -37,7 +37,7 @@ class ValidatorInfoQuery extends Component {
       function (result) {
         console.log(result)
         if (!result) { 
-          this.setState({Address: "Found Null"})
+          this.setState({Address: "No found"})
           return; 
         }
         this.setState(result);

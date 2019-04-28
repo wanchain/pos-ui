@@ -28,6 +28,12 @@ class RewardQuery extends Component {
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
       function (result) {
         console.log(result)
+        if(!result) {
+          this.setState({
+            addrReward: 'No found',
+          })
+          return
+        }
         this.setState({
           addrReward: result.addrReward.toFixed(2),
         });

@@ -33,6 +33,14 @@ class ActivityQuery extends Component {
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
       function (result) {
         console.log(result)
+        if (!result) {
+          this.setState({
+            addrMine: 'No found',
+            addrEp: 'No found',
+            addrRp: 'No found',
+          })
+          return;
+        }
         this.setState({
           addrMine: result.addrMine,
           addrEp: result.addrEp,
@@ -52,16 +60,16 @@ class ActivityQuery extends Component {
             <div className="i3">End Epoch:</div>
             <div className="bt"><button onClick={this.addrActivityCheck.bind(this)}>Calculate</button></div>
             <div className="i11"><input placeholder="Account Address"
-            ref={(input) => { this.addrAct = input }}
-            
+              ref={(input) => { this.addrAct = input }}
+
             ></input></div>
             <div className="i21"><input placeholder="Start Epoch"
-            ref={(input) => { this.startEpochAct = input }}
-            
+              ref={(input) => { this.startEpochAct = input }}
+
             ></input></div>
             <div className="i31"><input placeholder="End Epoch"
-            ref={(input) => { this.endEpochAct = input }}
-            
+              ref={(input) => { this.endEpochAct = input }}
+
             ></input></div>
           </div>
           <div className="o">{JSON.stringify(this.state, null, 4)}</div>

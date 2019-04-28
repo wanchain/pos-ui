@@ -30,6 +30,13 @@ class UserHistoryQuery extends Component {
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
       function (result) {
         console.log(result)
+        if(!result) {
+          this.setState({
+            workingEpoch: 'No found',
+            disworkingEpoch: 'No found',
+          })
+          return
+        }
         this.setState({
           workingEpoch: result.workingEpoch,
           disworkingEpoch: result.disworkingEpoch,

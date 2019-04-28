@@ -28,6 +28,13 @@ class Reward extends Component {
     this.serverRequest = $.get(serverUrl + 'minerCalc?amount=' + amount + '&locktime=' + locktime,
       function (result) {
         console.log(result)
+        if (!result) {
+          this.setState({
+            minerTotalReward: 'No found',
+            minerRewardRate: 'No found',
+          })
+          return
+        }
         this.setState({
           minerTotalReward: result.minerTotalReward.toFixed(2),
           minerRewardRate: result.minerRewardRate.toFixed(2) + '%',
