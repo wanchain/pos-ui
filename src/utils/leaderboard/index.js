@@ -47,8 +47,8 @@ class LeaderBoard extends Component {
           <div className="liAmountValue">{value.Amount}</div>
           <div className="liStartEpoch">Work Epoch:</div>
           <div className="liStartEpochValue">{value.StakingEpoch} ~ {(value.StakingEpoch + value.LockEpochs)}</div>
-          <div className="liEndEpoch">Fee Rate:</div>
-          <div className="liEndEpochValue">{value.FeeRate}</div>
+          <div className="liEndEpoch">FeeRate: {value.FeeRate}</div>
+          <div className="liEndEpochValue">Delegator: {value.Clients.length}</div>
         </li>
       );
     })
