@@ -73,11 +73,11 @@ class Board extends Component {
         <div className="totalstkValue">{this.state.totalStake}</div>
         <div className="everageTitle">Average Reward:</div>
         <div className="everagetValue">{(this.state.yearReward * 100 / this.state.totalStake).toFixed(2)}%</div>
-        <div className="minerCntTitle">Miner Count:</div>
+        <div className="minerCntTitle">Validator Count:</div>
         <div className="minerCntValue">{this.state.minerCount}</div>
-        <div className="delegatorCntTitle">Delegator Count:</div>
+        <div className="delegatorCntTitle">Delegate Validator Count:</div>
         <div className="delegatorCntValue">{this.state.delegatorCount}</div>
-        <div className="delegatePartCntTitle">Delegator Participant:</div>
+        <div className="delegatePartCntTitle">Delegator Count:</div>
         <div className="delegatePartCntValue">{this.state.delePartiCnt}</div>
         <div className="epochIDTitle">Current Epoch ID:</div>
         <div className="epochID">{this.state.epochID}</div>
