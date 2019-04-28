@@ -30,7 +30,7 @@ class UserHistoryQuery extends Component {
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
       function (result) {
         console.log(result)
-        if(!result) {
+        if (!result["workingEpoch"]) {
           this.setState({
             workingEpoch: 'No found',
             disworkingEpoch: 'No found',
@@ -55,16 +55,16 @@ class UserHistoryQuery extends Component {
             <div className="i3">End Epoch:</div>
             <div className="bt"><button onClick={this.addrWorkingHistoryQuery.bind(this)}>Calculate</button></div>
             <div className="i11"><input placeholder="Account Address"
-            ref={(input) => { this.addr = input }}
-            
+              ref={(input) => { this.addr = input }}
+
             ></input></div>
             <div className="i21"><input placeholder="Query Start Epoch"
-            ref={(input) => { this.startEpoch = input }}
-            
+              ref={(input) => { this.startEpoch = input }}
+
             ></input></div>
             <div className="i31"><input placeholder="Query End Epoch"
-            ref={(input) => { this.endEpoch = input }}
-            
+              ref={(input) => { this.endEpoch = input }}
+
             ></input></div>
           </div>
           <div className="o">{JSON.stringify(this.state, null, 4)}</div>

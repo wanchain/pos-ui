@@ -33,7 +33,7 @@ class ActivityQuery extends Component {
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
       function (result) {
         console.log(result)
-        if (!result) {
+        if (!result["addrMine"]) {
           this.setState({
             addrMine: 'No found',
             addrEp: 'No found',

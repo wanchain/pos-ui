@@ -28,7 +28,7 @@ class Reward extends Component {
     this.serverRequest = $.get(serverUrl + 'minerCalc?amount=' + amount + '&locktime=' + locktime,
       function (result) {
         console.log(result)
-        if (!result) {
+        if (!result["minerTotalReward"]) {
           this.setState({
             minerTotalReward: 'No found',
             minerRewardRate: 'No found',

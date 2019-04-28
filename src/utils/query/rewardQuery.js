@@ -28,7 +28,7 @@ class RewardQuery extends Component {
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
       function (result) {
         console.log(result)
-        if(!result) {
+        if(!result["addrReward"]) {
           this.setState({
             addrReward: 'No found',
           })
