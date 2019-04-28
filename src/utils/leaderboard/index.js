@@ -45,10 +45,10 @@ class LeaderBoard extends Component {
           <div className="liAddrValue">{value.Address}</div>
           <div className="liAmount">Amount:</div>
           <div className="liAmountValue">{value.Amount}</div>
-          <div className="liStartEpoch">Start Epoch:</div>
-          <div className="liStartEpochValue">{value.StakingEpoch}</div> 
-          <div className="liEndEpoch">End Epoch:</div>
-          <div className="liEndEpochValue">{(value.StakingEpoch + value.LockEpochs)}</div>
+          <div className="liStartEpoch">Work Epoch:</div>
+          <div className="liStartEpochValue">{value.StakingEpoch} ~ {(value.StakingEpoch + value.LockEpochs)}</div> 
+          <div className="liEndEpoch">Fee Rate:</div>
+          <div className="liEndEpochValue">{value.FeeRate}</div>
         </li>
       );
     })
