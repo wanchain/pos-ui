@@ -55,7 +55,7 @@ class LeaderBoard extends Component {
 
     return (
       <div className="LeaderBoard">
-        <div className="LeaderBoardTitle">Leader Board</div>
+        <div className="LeaderBoardTitle">All Validators</div>
         <ul>{items}</ul>
       </div>
     );
