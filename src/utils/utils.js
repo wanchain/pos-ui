@@ -6,6 +6,7 @@ import RewardQuery from './query/rewardQuery'
 import ActivityQuery from './query/activityQuery'
 import UserHistoryQuery from './query/userHistoryQuery'
 import ValidatorInfoQuery from './query/validatorInfoQuery'
+import LeaderBoard from './leaderboard'
 
 class Utils extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class Utils extends Component {
   render() {
     return (
       <div className="Utils">
+        <LeaderBoard />
         <RewardMiner />
         <RewardDelegate />
         <RewardQuery />

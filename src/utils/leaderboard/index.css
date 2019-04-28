@@ -1,0 +1,44 @@
+.LeaderBoard {
+  min-height: 30vh;
+  border-radius: 2vh;
+  background-color: rgb(50, 66, 99);
+  margin: 1vh 0vh 0vh 0vh;
+  color: white;
+}
+
+.LeaderBoard div {
+  padding: 1vh;
+  color: white;
+}
+
+.LeaderBoardTitle {
+  border-bottom: 1px solid rgb(174, 167, 167);
+}
+
+.liGrid {
+  background-color: rgb(65, 82, 101);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "i1 i2 i3 i4 i5 i6 i7 i8";
+  width: 96%;
+  border-radius: 2vh;
+  margin: 1vh;
+  height: 5vh;
+}
+
+.liAddr {  grid-area: i1; }
+
+.liAddrValue {  grid-area: i2;}
+
+.liAmount {  grid-area: i3; }
+
+.liAmountValue {  grid-area: i4;}
+
+.liStartEpoch {  grid-area: i5; }
+
+.liStartEpochValue {  grid-area: i6;}
+
+.liEndEpoch {  grid-area: i7; }
+
+.liEndEpochValue {  grid-area: i8;}
