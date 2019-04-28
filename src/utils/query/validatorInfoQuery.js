@@ -36,6 +36,10 @@ class ValidatorInfoQuery extends Component {
       address,
       function (result) {
         console.log(result)
+        if (!result) { 
+          this.setState({Address: "Found Null"})
+          return; 
+        }
         this.setState(result);
       }.bind(this));
   }
