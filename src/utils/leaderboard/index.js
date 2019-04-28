@@ -12,17 +12,17 @@ class LeaderBoard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      leaderBoard:[]
+      leaderBoard: []
     }
   }
 
   getLeaderBoard() {
     this.serverRequest = $.get(serverUrl + 'stakerInfo', function (result) {
       console.log(result)
-      if(!result) { return }
+      if (!result) { return }
       console.log(result)
       this.setState({
-        leaderBoard:result,
+        leaderBoard: result,
       })
     }.bind(this));
   }
@@ -38,7 +38,7 @@ class LeaderBoard extends Component {
 
   render() {
     const snap = this.state.leaderBoard.slice(0, this.state.leaderBoard.length)
-    const items = snap.map((value, index)=>{
+    const items = snap.map((value, index) => {
       return (
         <li className="liGrid" key={index}>
           <div className="liAddr">Address:</div>
@@ -46,7 +46,7 @@ class LeaderBoard extends Component {
           <div className="liAmount">Amount:</div>
           <div className="liAmountValue">{value.Amount}</div>
           <div className="liStartEpoch">Work Epoch:</div>
-          <div className="liStartEpochValue">{value.StakingEpoch} ~ {(value.StakingEpoch + value.LockEpochs)}</div> 
+          <div className="liStartEpochValue">{value.StakingEpoch} ~ {(value.StakingEpoch + value.LockEpochs)}</div>
           <div className="liEndEpoch">Fee Rate:</div>
           <div className="liEndEpochValue">{value.FeeRate}</div>
         </li>
@@ -56,7 +56,9 @@ class LeaderBoard extends Component {
     return (
       <div className="LeaderBoard">
         <div className="LeaderBoardTitle">All Validators</div>
-        <ul>{items}</ul>
+        <div className="LeaderBoardBody">
+          <ul >{items}</ul>
+        </div>
       </div>
     );
   }

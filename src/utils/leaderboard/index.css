@@ -7,12 +7,16 @@
 }
 
 .LeaderBoard div {
-  padding: 1vh;
+  padding: 1.4vh;
   color: white;
 }
 
 .LeaderBoardTitle {
   border-bottom: 1px solid rgb(174, 167, 167);
+}
+
+.LeaderBoardBody {
+  padding: 1vh;
 }
 
 .liGrid {
