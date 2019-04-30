@@ -22,9 +22,9 @@
 .liGrid {
   background-color: rgb(65, 82, 101);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.1fr 1fr 0.1fr 0.1fr 0.1fr 0.5fr 0.6fr 0.6fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "i1 i2 i3 i4 i5 i6 i7 i8";
+  grid-template-areas: "i1 i2 i3 i4 i5 i6 i7 i8 i9";
   width: 96%;
   border-radius: 2vh;
   margin: 1vh;
@@ -46,3 +46,5 @@
 .liEndEpoch {  grid-area: i7; }
 
 .liEndEpochValue {  grid-area: i8;}
+
+.liDelegatorAmountValue {  grid-area: i9;}
