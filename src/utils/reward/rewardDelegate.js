@@ -29,7 +29,7 @@ class RewardDelegate extends Component {
       amount + '&locktime=' + locktime + '&feerate=' + feerate,
       function (result) {
         console.log(result)
-        if (!result["delegateTotalReward"]) {
+        if (result["delegateTotalReward"] === undefined) {
           this.setState({
             delegateTotalReward: 'No found',
             delegateRewardRate: 'No found',
