@@ -48,6 +48,7 @@ class Board extends Component {
         yearReward: result.yearReward,
         curEpochStartTime: result.curEpochStartTime,
         nextEpochStartTime: result.nextEpochStartTime,
+        stableBlock: result.stableBlock,
       });
     }.bind(this));
   }
@@ -89,6 +90,8 @@ class Board extends Component {
         <div className="curEpochTimeValue">{(new Date(this.state.curEpochStartTime*1000)).toLocaleString()}</div>
         <div className="nextEpochTime">Next Epoch Start:</div>
         <div className="nextEpochTimeValue">{(new Date(this.state.nextEpochStartTime*1000)).toLocaleString()}</div>
+        <div className="sbkT">Stable Block:</div>
+        <div className="sbkV">{this.state.stableBlock}</div>
       </div>
     );
   }
