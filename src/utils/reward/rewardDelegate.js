@@ -57,7 +57,7 @@ class RewardDelegate extends Component {
               ref={(input) => { this.delegateAmount = input }}
             ></input></div>
             <div className="i21" hidden="true"><input placeholder="Lock Time In Epochs"
-            value="7" readOnly="true"></input></div>
+            value="7" readOnly={true}></input></div>
             <div className="i21"><input placeholder="Delegator's Fee Rate 10 (%)"
               ref={(input) => { this.delegateFeeRate = input }}
 

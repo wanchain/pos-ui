@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import $ from 'jquery';
+import {Table} from 'antd';
 
 
 console.log(window.location.href)
@@ -36,6 +37,40 @@ class LeaderBoard extends Component {
     clearInterval(this.timer)
   }
 
+  columns = [{
+    title: 'Address',
+    dataIndex: 'Address',
+    key: 'Address',
+  }, {
+    title: 'Amount',
+    dataIndex: 'Amount',
+    key: 'Amount',
+  }, {
+    title: 'Start Epoch',
+    dataIndex: 'StakingEpoch',
+    key: 'StakingEpoch',
+  }, {
+    title: 'Lock Epoch',
+    dataIndex: 'LockEpochs',
+    key: 'LockEpochs',
+  }, {
+    title: 'Next Lock',
+    dataIndex: 'NextLockEpochs',
+    key: 'NextLockEpochs',
+  }, {
+    title: 'Fee Rate',
+    dataIndex: 'FeeRate',
+    key: 'FeeRate',
+  }, {
+    title: 'Delegators',
+    dataIndex: 'Delegators',
+    key: 'Delegators',
+  }, {
+    title: 'Delegate Percent',
+    dataIndex: 'DelegatePercent',
+    key: 'DelegatePercent',
+  }];
+
   render() {
     const snap = this.state.leaderBoard.slice(0, this.state.leaderBoard.length)
     const items = snap.map((value, index) => {
@@ -46,26 +81,16 @@ class LeaderBoard extends Component {
       delegateAmount /= 1e18;
       let delePercent = delegateAmount * 100 / (value.Amount * 5)
       
-      return (
-        <li className="liGrid" key={index}>
-          <div className="liAddr">Addr:</div>
-          <div className="liAddrValue">{value.Address}</div>
-          <div className="liAmount">Amount:</div>
-          <div className="liAmountValue">{value.Amount}</div>
-          <div className="liStartEpoch">Epoch:</div>
-          <div className="liStartEpochValue">{value.StakingEpoch} ~ {(value.StakingEpoch + value.LockEpochs)}</div>
-          <div className="liEndEpoch">FeeRate: {value.FeeRate}</div>
-          <div className="liEndEpochValue">Delegator: {value.Clients.length}</div>
-          <div className="liDelegatorAmount">Delegate Percent: {delePercent.toFixed(0)}%</div>
-        </li>
-      );
-    })
+      value.Delegators = value.Clients.length
+      value.DelegatePercent = delePercent.toFixed(0) + '%'
 
+      return value
+    })
     return (
       <div className="LeaderBoard">
         <div className="LeaderBoardTitle">All Validators</div>
         <div className="LeaderBoardBody">
-          <ul >{items}</ul>
+          <Table dataSource={snap} columns={this.columns}></Table>
         </div>
       </div>
     );
