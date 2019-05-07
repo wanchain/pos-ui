@@ -1,8 +1,9 @@
 .LeaderBoard {
   min-height: 30vh;
   border-radius: 2vh;
-  background-color: rgb(147, 147, 147);
+  background-color: rgb(210, 209, 209);
   margin: 1vh 0vh 0vh 0vh;
+  max-height: 50vh;
 }
 
 .LeaderBoard div {
@@ -11,7 +12,7 @@
 
 .LeaderBoardTitle {
   border-bottom: 1px solid rgb(174, 167, 167);
-  color: aliceblue;
+  color: rgb(2, 2, 2);
 }
 
 .LeaderBoardBody {
