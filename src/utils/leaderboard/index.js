@@ -90,7 +90,7 @@ class LeaderBoard extends Component {
       <div className="LeaderBoard">
         <div className="LeaderBoardTitle">All Validators</div>
         <div className="LeaderBoardBody">
-          <Table dataSource={snap} columns={this.columns}></Table>
+          <Table dataSource={items} columns={this.columns}></Table>
         </div>
       </div>
     );
