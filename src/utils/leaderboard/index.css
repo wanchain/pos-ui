@@ -1,7 +1,7 @@
 .LeaderBoard {
   min-height: 30vh;
   border-radius: 2vh;
-  background-color: rgb(89, 64, 81);
+  background-color: rgb(147, 147, 147);
   margin: 1vh 0vh 0vh 0vh;
 }
 
@@ -19,5 +19,5 @@
 }
 
 Table {
-  color: aquamarine;
+  color: rgb(12, 70, 51);
 }
