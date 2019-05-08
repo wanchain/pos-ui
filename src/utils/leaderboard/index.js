@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import $ from 'jquery';
-import {Table} from 'antd';
+import { Table } from 'antd';
 
 
 console.log(window.location.href)
@@ -73,19 +73,25 @@ class LeaderBoard extends Component {
 
   render() {
     const snap = this.state.leaderBoard.slice(0, this.state.leaderBoard.length)
-    const items = snap.map((value, index) => {
-      let delegateAmount = 0
-      for (let i = 0; i < value.Clients.length; i++) {
-        delegateAmount += value.Clients[i].Amount;
-      }
-      delegateAmount /= 1e18;
-      let delePercent = delegateAmount * 100 / (value.Amount * 5)
-      
-      value.Delegators = value.Clients.length
-      value.DelegatePercent = delePercent.toFixed(0) + '%'
+    if (snap != undefined && snap.length == 0) {
 
-      return value
-    })
+      this.items = snap.map((value, index) => {
+        let delegateAmount = 0
+        for (let i = 0; i < value.Clients.length; i++) {
+          delegateAmount += value.Clients[i].Amount;
+        }
+        delegateAmount /= 1e18;
+        let delePercent = delegateAmount * 100 / (value.Amount * 5)
+
+        value.Delegators = value.Clients.length
+        value.DelegatePercent = delePercent.toFixed(0) + '%'
+
+        return value
+      })
+    } else {
+      this.items = undefined
+    }
+
     return (
       <div className="LeaderBoard">
         <div className="LeaderBoardTitle">All Validators</div>
