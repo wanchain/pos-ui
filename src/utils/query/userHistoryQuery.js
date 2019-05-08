@@ -24,7 +24,7 @@ class UserHistoryQuery extends Component {
     let startepoch = this.startEpoch.value
     let endepoch = this.endEpoch.value
 
-    this.serverRequest = $.get(global.serverUrl + 'workingHistoryQuery?address=' +
+    this.serverRequest = $.get(window.serverUrl + 'workingHistoryQuery?address=' +
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
       function (result) {
         console.log(result)

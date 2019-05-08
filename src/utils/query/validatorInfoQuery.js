@@ -29,7 +29,7 @@ class ValidatorInfoQuery extends Component {
 
     let address = this.addr.value
 
-    this.serverRequest = $.get(global.serverUrl + 'validatorInfo?address=' +
+    this.serverRequest = $.get(window.serverUrl + 'validatorInfo?address=' +
       address,
       function (result) {
         console.log(result)

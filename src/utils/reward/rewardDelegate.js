@@ -24,7 +24,7 @@ class RewardDelegate extends Component {
     let locktime = 7//this.delegateLockTime.value
     let feerate = this.delegateFeeRate.value
 
-    this.serverRequest = $.get(global.serverUrl + 'delegateCalc?amount=' +
+    this.serverRequest = $.get(window.serverUrl + 'delegateCalc?amount=' +
       amount + '&locktime=' + locktime + '&feerate=' + feerate,
       function (result) {
         console.log(result)

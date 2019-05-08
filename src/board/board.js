@@ -29,7 +29,7 @@ class Board extends Component {
 
   getInfo() {
     console.log("getInfo called")
-    this.serverRequest = $.get(global.serverUrl + 'info', function (result) {
+    this.serverRequest = $.get((window.serverUrl + 'info'), function(result) {
       console.log(result)
       if(!result["blockNumber"]) { return }
       this.setState({

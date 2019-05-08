@@ -27,7 +27,7 @@ class ActivityQuery extends Component {
     let startepoch = this.startEpochAct.value
     let endepoch = this.endEpochAct.value
 
-    this.serverRequest = $.get(global.serverUrl + 'addrActivityCheck?address=' +
+    this.serverRequest = $.get(window.serverUrl + 'addrActivityCheck?address=' +
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
       function (result) {
         console.log(result)

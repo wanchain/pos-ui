@@ -4,7 +4,7 @@ import Title from './title/title'
 import Board from './board/board'
 import Utils from './utils/utils'
 
-global.serverUrl = "http://52.13.64.66:8000/"
+window.serverUrl = "http://52.13.64.66:8000/"
 
 class App extends Component {
   componentDidMount() {

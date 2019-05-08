@@ -22,7 +22,7 @@ class Reward extends Component {
     let amount = this.minerLockAmount.value
     let locktime = this.minerLockTime.value
 
-    this.serverRequest = $.get(global.serverUrl + 'minerCalc?amount=' + amount + '&locktime=' + locktime,
+    this.serverRequest = $.get(window.serverUrl + 'minerCalc?amount=' + amount + '&locktime=' + locktime,
       function (result) {
         console.log(result)
         if (result["minerTotalReward"] === undefined) {

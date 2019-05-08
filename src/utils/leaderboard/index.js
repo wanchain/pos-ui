@@ -14,7 +14,7 @@ class LeaderBoard extends Component {
   }
 
   getLeaderBoard() {
-    this.serverRequest = $.get(global.serverUrl + 'stakerInfo', function (result) {
+    this.serverRequest = $.get(window.serverUrl + 'stakerInfo', function (result) {
       console.log(result)
       if (!result) { return }
       console.log(result)
@@ -69,30 +69,27 @@ class LeaderBoard extends Component {
 
   render() {
     const snap = this.state.leaderBoard.slice(0, this.state.leaderBoard.length)
-    if (snap !== undefined && snap.length === 0) {
 
-      this.items = snap.map((value, index) => {
-        let delegateAmount = 0
-        for (let i = 0; i < value.Clients.length; i++) {
-          delegateAmount += value.Clients[i].Amount;
-        }
-        delegateAmount /= 1e18;
-        let delePercent = delegateAmount * 100 / (value.Amount * 5)
+    const items = snap.map((value, index) => {
+      let delegateAmount = 0
+      for (let i = 0; i < value.Clients.length; i++) {
+        delegateAmount += value.Clients[i].Amount;
+      }
+      delegateAmount /= 1e18;
+      let delePercent = delegateAmount * 100 / (value.Amount * 5)
 
-        value.Delegators = value.Clients.length
-        value.DelegatePercent = delePercent.toFixed(0) + '%'
+      value.Delegators = value.Clients.length
+      value.DelegatePercent = delePercent.toFixed(0) + '%'
 
-        return value
-      })
-    } else {
-      this.items = undefined
-    }
+      return value
+    })
+
 
     return (
       <div className="LeaderBoard">
         <div className="LeaderBoardTitle">All Validators</div>
         <div className="LeaderBoardBody">
-          <Table dataSource={this.items} columns={this.columns}></Table>
+          <Table dataSource={items} columns={this.columns}></Table>
         </div>
       </div>
     );
