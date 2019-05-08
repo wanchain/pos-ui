@@ -3,9 +3,6 @@ import './rewardMiner.css';
 import $ from 'jquery';
 
 
-let serverUrl = window.location.href
-serverUrl = serverUrl.replace("3000", "8000")
-
 class Reward extends Component {
   constructor(props) {
     super(props)
@@ -25,7 +22,7 @@ class Reward extends Component {
     let amount = this.minerLockAmount.value
     let locktime = this.minerLockTime.value
 
-    this.serverRequest = $.get(serverUrl + 'minerCalc?amount=' + amount + '&locktime=' + locktime,
+    this.serverRequest = $.get(global.serverUrl + 'minerCalc?amount=' + amount + '&locktime=' + locktime,
       function (result) {
         console.log(result)
         if (result["minerTotalReward"] === undefined) {

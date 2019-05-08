@@ -4,10 +4,6 @@ import $ from 'jquery';
 import { Table } from 'antd';
 
 
-console.log(window.location.href)
-let serverUrl = window.location.href
-serverUrl = serverUrl.replace("3000", "8000")
-console.log(serverUrl)
 
 class LeaderBoard extends Component {
   constructor(props) {
@@ -18,7 +14,7 @@ class LeaderBoard extends Component {
   }
 
   getLeaderBoard() {
-    this.serverRequest = $.get(serverUrl + 'stakerInfo', function (result) {
+    this.serverRequest = $.get(global.serverUrl + 'stakerInfo', function (result) {
       console.log(result)
       if (!result) { return }
       console.log(result)

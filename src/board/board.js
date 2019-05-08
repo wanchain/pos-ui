@@ -3,10 +3,6 @@ import './board.css';
 import $ from 'jquery';
 
 
-console.log(window.location.href)
-let serverUrl = window.location.href
-serverUrl = serverUrl.replace("3000", "8000")
-console.log(serverUrl)
 
 class Board extends Component {
   constructor(props) {
@@ -33,7 +29,7 @@ class Board extends Component {
 
   getInfo() {
     console.log("getInfo called")
-    this.serverRequest = $.get(serverUrl + 'info', function (result) {
+    this.serverRequest = $.get(global.serverUrl + 'info', function (result) {
       console.log(result)
       if(!result["blockNumber"]) { return }
       this.setState({

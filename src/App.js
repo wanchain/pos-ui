@@ -4,12 +4,7 @@ import Title from './title/title'
 import Board from './board/board'
 import Utils from './utils/utils'
 
-console.log(window.location.href)
-
-let serverUrl = window.location.href
-serverUrl = serverUrl.replace("3000", "8000")
-
-console.log(serverUrl)
+global.serverUrl = "http://52.13.64.66:8000/"
 
 class App extends Component {
   componentDidMount() {

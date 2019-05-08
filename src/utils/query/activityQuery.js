@@ -3,8 +3,6 @@ import '../reward/rewardMiner.css';
 import $ from 'jquery';
 
 
-let serverUrl = window.location.href
-serverUrl = serverUrl.replace("3000", "8000")
 
 class ActivityQuery extends Component {
   constructor(props) {
@@ -29,7 +27,7 @@ class ActivityQuery extends Component {
     let startepoch = this.startEpochAct.value
     let endepoch = this.endEpochAct.value
 
-    this.serverRequest = $.get(serverUrl + 'addrActivityCheck?address=' +
+    this.serverRequest = $.get(global.serverUrl + 'addrActivityCheck?address=' +
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
       function (result) {
         console.log(result)

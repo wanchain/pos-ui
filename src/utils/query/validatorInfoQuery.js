@@ -3,9 +3,6 @@ import '../reward/rewardMiner.css';
 import $ from 'jquery';
 
 
-let serverUrl = window.location.href
-serverUrl = serverUrl.replace("3000", "8000")
-
 class ValidatorInfoQuery extends Component {
   constructor(props) {
     super(props)
@@ -32,7 +29,7 @@ class ValidatorInfoQuery extends Component {
 
     let address = this.addr.value
 
-    this.serverRequest = $.get(serverUrl + 'validatorInfo?address=' +
+    this.serverRequest = $.get(global.serverUrl + 'validatorInfo?address=' +
       address,
       function (result) {
         console.log(result)

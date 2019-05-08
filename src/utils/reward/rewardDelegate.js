@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './rewardMiner.css';
 import $ from 'jquery';
 
-let serverUrl = window.location.href
-serverUrl = serverUrl.replace("3000", "8000")
+
 
 class RewardDelegate extends Component {
   constructor(props) {
@@ -25,7 +24,7 @@ class RewardDelegate extends Component {
     let locktime = 7//this.delegateLockTime.value
     let feerate = this.delegateFeeRate.value
 
-    this.serverRequest = $.get(serverUrl + 'delegateCalc?amount=' +
+    this.serverRequest = $.get(global.serverUrl + 'delegateCalc?amount=' +
       amount + '&locktime=' + locktime + '&feerate=' + feerate,
       function (result) {
         console.log(result)
