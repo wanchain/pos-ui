@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './board.css';
 import $ from 'jquery';
+import { Statistic } from 'antd';
 
 
 
@@ -64,30 +65,18 @@ class Board extends Component {
   render() {
     return (
       <div className="Board">
-        <div className="blkN0Title">Block Number:</div>
-        <div className="blkNoValue">{this.state.blockNumber}</div>
-        <div className="totalstkTitle">Total Stake:</div>
-        <div className="totalstkValue">{this.state.totalStake}</div>
-        <div className="everageTitle">Average Reward:</div>
-        <div className="everagetValue">{(this.state.yearReward * 100 / this.state.totalStake).toFixed(2)}%</div>
-        <div className="minerCntTitle">Validator Count:</div>
-        <div className="minerCntValue">{this.state.minerCount}</div>
-        <div className="delegatorCntTitle">Delegate Validator Count:</div>
-        <div className="delegatorCntValue">{this.state.delegatorCount}</div>
-        <div className="delegatePartCntTitle">Delegator Count:</div>
-        <div className="delegatePartCntValue">{this.state.delePartiCnt}</div>
-        <div className="epochIDTitle">Current Epoch ID:</div>
-        <div className="epochID">{this.state.epochID}</div>
-        <div className="slotIDTitle">Current Slot ID:</div>
-        <div className="slotID">{this.state.slotID}</div>
-        <div className="epochPercentTitle">Epoch Percent:</div>
-        <div className="epochPercent">{this.state.epochPercent}%</div>
-        <div className="curEpochTime">Current Epoch Start:</div>
-        <div className="curEpochTimeValue">{(new Date(this.state.curEpochStartTime*1000)).toLocaleString()}</div>
-        <div className="nextEpochTime">Next Epoch Start:</div>
-        <div className="nextEpochTimeValue">{(new Date(this.state.nextEpochStartTime*1000)).toLocaleString()}</div>
-        <div className="sbkT">Stable Block:</div>
-        <div className="sbkV">{this.state.stableBlock}</div>
+        <div className="blkNoValue"><Statistic title="Block Number" value={this.state.blockNumber} /></div>
+        <div className="totalstkValue"><Statistic title="Total Stake" value={this.state.totalStake} /></div>
+        <div className="everagetValue"><Statistic title="Average Reward" value={(this.state.yearReward * 100 / this.state.totalStake).toFixed(2) + '%'} /></div>
+        <div className="minerCntValue"><Statistic title="Validator Count" value={this.state.minerCount} /></div>
+        <div className="delegatorCntValue"><Statistic title="Delegate Validator Count" value={this.state.delegatorCount} /></div>
+        <div className="delegatePartCntValue"><Statistic title="Delegator Count" value={this.state.delePartiCnt} /></div>
+        <div className="epochID"><Statistic title="Current Epoch ID" value={this.state.epochID} /></div>
+        <div className="slotID"><Statistic title="Current Slot ID" value={this.state.slotID} /></div>
+        <div className="epochPercent"><Statistic title="Epoch Percent" value={this.state.epochPercent + '%'}/></div>
+        <div className="curEpochTimeValue"><Statistic title="Current Epoch Start" value={(new Date(this.state.curEpochStartTime*1000)).toLocaleString()} /></div>
+        <div className="nextEpochTimeValue"><Statistic title="Next Epoch Start" value={(new Date(this.state.nextEpochStartTime*1000)).toLocaleString()} /></div>
+        <div className="sbkV"><Statistic title="Stable Block" value={this.state.stableBlock} /></div>
       </div>
     );
   }

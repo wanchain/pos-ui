@@ -1,8 +1,8 @@
 .Board {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "b1 b2 b3 b4 b5 b6" "b7 b8 b9 b10 b11 b12" "b13 b14 b15 b16 b17 b18" "b19 b20 b21 b22 sbkT sbkV";
+  grid-template-areas: "b2 b4 b6" "b8 b10 b12" "b14 b16 b18" "b20 b22 sbkV";
   grid-area: board;
   height: 100%;
   margin: 0vh;
@@ -13,9 +13,13 @@
   border-radius: 2vh;
 }
 
+Statistic {
+  color: azure;
+}
+
 .Board div {
   margin: 0vh;
-  padding: 1.5vh;
+  padding: 0.5vh;
 }
 
 .blkN0Title {
