@@ -73,7 +73,7 @@ class LeaderBoard extends Component {
 
   render() {
     const snap = this.state.leaderBoard.slice(0, this.state.leaderBoard.length)
-    if (snap != undefined && snap.length == 0) {
+    if (snap !== undefined && snap.length === 0) {
 
       this.items = snap.map((value, index) => {
         let delegateAmount = 0
