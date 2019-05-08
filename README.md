@@ -6,6 +6,8 @@ see the pos-ui-server's README.md at:
 
 https://github.com/wanchain/pos-ui-server
 
+![img](./img/page.png)
+
 # Other things
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
