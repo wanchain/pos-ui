@@ -73,14 +73,19 @@ class LeaderBoard extends Component {
     const items = snap.map((value, index) => {
       let delegateAmount = 0
       for (let i = 0; i < value.Clients.length; i++) {
-        delegateAmount += value.Clients[i].Amount;
+        delegateAmount += Number(value.Clients[i].Amount);
       }
-      delegateAmount /= 1e18;
+      //delegateAmount /= 1e18;
       let delePercent = delegateAmount * 100 / (value.Amount * 5)
 
       value.Delegators = value.Clients.length
       value.DelegatePercent = delePercent.toFixed(0) + '%'
 
+      let parnterAmount = 0
+      for (let i = 0; i < value.Partners.length; i++) {
+        parnterAmount += Number(value.Partners[i].Amount);
+      }
+      value.Amount += parnterAmount
       return value
     })
 
