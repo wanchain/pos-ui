@@ -85,7 +85,7 @@ class LeaderBoard extends Component {
       for (let i = 0; i < value.Partners.length; i++) {
         parnterAmount += Number(value.Partners[i].Amount);
       }
-      value.Amount += parnterAmount
+      value.Amount =Number(value.Amount) + Number(parnterAmount)
       return value
     })
 
