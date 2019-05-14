@@ -68,14 +68,14 @@ class Board extends Component {
         <div className="blkNoValue"><Statistic title="Block Number" value={this.state.blockNumber} /></div>
         <div className="totalstkValue"><Statistic title="Total Stake" value={this.state.totalStake} /></div>
         <div className="everagetValue"><Statistic title="Average Reward" value={(this.state.yearReward * 100 / this.state.totalStake).toFixed(2) + '%'} /></div>
-        <div className="minerCntValue"><Statistic title="Validator Count" value={this.state.minerCount} /></div>
-        <div className="delegatorCntValue"><Statistic title="Delegate Validator Count" value={this.state.delegatorCount} /></div>
-        <div className="delegatePartCntValue"><Statistic title="Delegator Count" value={this.state.delePartiCnt} /></div>
-        <div className="epochID"><Statistic title="Current Epoch ID" value={this.state.epochID} /></div>
-        <div className="slotID"><Statistic title="Current Slot ID" value={this.state.slotID} /></div>
+        <div className="minerCntValue"><Statistic title="Validator" value={this.state.minerCount} /></div>
+        <div className="delegatorCntValue"><Statistic title="Delegate" value={this.state.delegatorCount} /></div>
+        <div className="delegatePartCntValue"><Statistic title="Delegator" value={this.state.delePartiCnt} /></div>
+        <div className="epochID"><Statistic title="Epoch ID" value={this.state.epochID} /></div>
+        <div className="slotID"><Statistic title="Slot ID" value={this.state.slotID} /></div>
         <div className="epochPercent"><Statistic title="Epoch Percent" value={this.state.epochPercent + '%'}/></div>
-        <div className="curEpochTimeValue"><Statistic title="Current Epoch Start" value={(new Date(this.state.curEpochStartTime*1000)).toLocaleString()} /></div>
-        <div className="nextEpochTimeValue"><Statistic title="Next Epoch Start" value={(new Date(this.state.nextEpochStartTime*1000)).toLocaleString()} /></div>
+        {/* <div className="curEpochTimeValue"><Statistic title="Current Epoch Start" value={(new Date(this.state.curEpochStartTime*1000)).toLocaleString()} /></div> */}
+        {/* <div className="nextEpochTimeValue"><Statistic title="Next Epoch Start" value={(new Date(this.state.nextEpochStartTime*1000)).toLocaleString()} /></div> */}
         <div className="sbkV"><Statistic title="Stable Block" value={this.state.stableBlock} /></div>
       </div>
     );
