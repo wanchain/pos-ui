@@ -1,8 +1,8 @@
 .Board {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "b2 b4 b6 b8 b10 b12 b14 b16 b18 sbkV";
+  grid-template-areas: "b2 b4 b6 b8 b12 b14 b16 b18 sbkV";
   grid-area: board;
   height: 100%;
   margin: 0vh;

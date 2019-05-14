@@ -69,7 +69,7 @@ class Board extends Component {
         <div className="totalstkValue"><Statistic title="Total Stake" value={this.state.totalStake} /></div>
         <div className="everagetValue"><Statistic title="Average Reward" value={(this.state.yearReward * 100 / this.state.totalStake).toFixed(2) + '%'} /></div>
         <div className="minerCntValue"><Statistic title="Validator" value={this.state.minerCount} /></div>
-        <div className="delegatorCntValue"><Statistic title="Delegate" value={this.state.delegatorCount} /></div>
+        {/* <div className="delegatorCntValue"><Statistic title="Delegate" value={this.state.delegatorCount} /></div> */}
         <div className="delegatePartCntValue"><Statistic title="Delegator" value={this.state.delePartiCnt} /></div>
         <div className="epochID"><Statistic title="Epoch ID" value={this.state.epochID} /></div>
         <div className="slotID"><Statistic title="Slot ID" value={this.state.slotID} /></div>
