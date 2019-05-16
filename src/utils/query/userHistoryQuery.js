@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../reward/rewardMiner.css';
 import $ from 'jquery';
+import { message } from 'antd';
 
 
 
@@ -15,14 +16,19 @@ class UserHistoryQuery extends Component {
 
   addrWorkingHistoryQuery() {
     console.log('addrWorkingHistoryQuery')
-    this.setState({
-      workingEpoch: 'Waiting',
-      disworkingEpoch: 'Waiting',
-    })
 
     let address = this.addr.value
     let startepoch = this.startEpoch.value
     let endepoch = this.endEpoch.value
+    if (startepoch < 0 || endepoch < 0) {
+      message.error("epoch id must >= 0")
+      return
+    }
+
+    this.setState({
+      workingEpoch: 'Waiting',
+      disworkingEpoch: 'Waiting',
+    })
 
     this.serverRequest = $.get(window.serverUrl + 'workingHistoryQuery?address=' +
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,

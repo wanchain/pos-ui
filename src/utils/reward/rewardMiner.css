@@ -49,3 +49,7 @@
   background-color: rgb(47, 78, 79);
   border-radius: 2vh;
 }
+
+.ant-message {
+  color: black;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './rewardMiner.css';
 import $ from 'jquery';
+import { message } from 'antd';
 
 
 
@@ -15,14 +16,31 @@ class RewardDelegate extends Component {
 
   delegateCalc() {
     console.log('delegateCalc')
-    this.setState({
-      delegateTotalReward: 'Waiting',
-      delegateRewardRate: 'Waiting',
-    })
+
 
     let amount = this.delegateAmount.value
     let locktime = this.delegateLockTime.value
     let feerate = this.delegateFeeRate.value
+
+    if (locktime < 7 || locktime > 90) {
+      message.error('Lock Time value must in range [7 ~ 90]');
+      return
+    }
+
+    if (amount <= 0) {
+      message.error("Amount must > 0")
+      return
+    }
+
+    if (feerate < 0 || feerate > 100) {
+      message.error('Fee Rate value must in range [0 ~ 100]');
+      return
+    }
+
+    this.setState({
+      delegateTotalReward: 'Waiting',
+      delegateRewardRate: 'Waiting',
+    })
 
     this.serverRequest = $.get(window.serverUrl + 'delegateCalc?amount=' +
       amount + '&locktime=' + locktime + '&feerate=' + feerate,

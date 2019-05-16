@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../reward/rewardMiner.css';
 import $ from 'jquery';
+import { message } from 'antd';
 
 
 
@@ -17,15 +18,22 @@ class ActivityQuery extends Component {
 
   addrActivityCheck() {
     console.log('addrActivityCheck')
+    
+
+    let address = this.addrAct.value
+    let startepoch = this.startEpochAct.value
+    let endepoch = this.endEpochAct.value
+
+    if(startepoch < 0 || endepoch < 0) {
+      message.error("epoch id must >= 0")
+      return
+    }
+
     this.setState({
       addrMine: 'Waiting',
       addrEp: 'Waiting',
       addrRp: 'Waiting',
     })
-
-    let address = this.addrAct.value
-    let startepoch = this.startEpochAct.value
-    let endepoch = this.endEpochAct.value
 
     this.serverRequest = $.get(window.serverUrl + 'addrActivityCheck?address=' +
       address + '&startepoch=' + startepoch + '&endepoch=' + endepoch,
