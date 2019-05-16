@@ -11,7 +11,8 @@
 
 .LeaderBoardTitle {
   /* border-bottom: 1px solid rgb(174, 167, 167); */
-  color: rgb(2, 2, 2);
+  font-size: 16px;
+  color: rgb(255, 255, 255);
 }
 
 .LeaderBoardBody {

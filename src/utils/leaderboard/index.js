@@ -104,12 +104,11 @@ class LeaderBoard extends Component {
 
     return (
       <div className="LeaderBoard">
-        {/* <div className="LeaderBoardTitle">Validators</div> */}
+        <div className="LeaderBoardTitle">Validator List</div>
         <div className="LeaderBoardBody">
           <Table dataSource={items} 
           columns={this.columns} 
           size="small" 
-          title={() => 'Validators List'}
           ></Table>
         </div>
       </div>
