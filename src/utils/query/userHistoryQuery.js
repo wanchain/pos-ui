@@ -45,7 +45,7 @@ class UserHistoryQuery extends Component {
   render() {
     return (
       <div className="Reward">
-        <div className="rewardTitle">Account's All Working History Query</div>
+        <div className="rewardTitle">Validator Working History Query</div>
         <div className="rewardGrid">
           <div className="i">
             <div className="i1">Address:</div>

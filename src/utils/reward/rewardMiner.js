@@ -42,7 +42,7 @@ class Reward extends Component {
   render() {
     return (
       <div className="Reward">
-        <div className="rewardTitle">Miner Reward Estimate</div>
+        <div className="rewardTitle">Validator Reward Estimate</div>
         <div className="rewardGrid">
           <div className="i">
             <div className="i1">Amount:</div>

@@ -41,7 +41,7 @@ class RewardQuery extends Component {
   render() {
     return (
       <div className="Reward">
-        <div className="rewardTitle">Account's Current Reward Query</div>
+        <div className="rewardTitle">Current Reward Query</div>
         <div className="rewardGrid">
           <div className="i">
             <div className="i1">Address:</div>

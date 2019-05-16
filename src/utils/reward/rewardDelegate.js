@@ -45,7 +45,7 @@ class RewardDelegate extends Component {
   render() {
     return (
       <div className="Reward">
-        <div className="rewardTitle">Send Delegate Reward Estimate</div>
+        <div className="rewardTitle">Delegator Reward Estimate</div>
         <div className="rewardGrid">
           <div className="i">
             <div className="i1">Amount:</div>
