@@ -21,7 +21,7 @@ class RewardDelegate extends Component {
     })
 
     let amount = this.delegateAmount.value
-    let locktime = 7//this.delegateLockTime.value
+    let locktime = this.delegateLockTime.value
     let feerate = this.delegateFeeRate.value
 
     this.serverRequest = $.get(window.serverUrl + 'delegateCalc?amount=' +
@@ -49,15 +49,16 @@ class RewardDelegate extends Component {
         <div className="rewardGrid">
           <div className="i">
             <div className="i1">Amount:</div>
-            <div className="i3">Lock Time:</div>
-            <div className="i2">Fee Rate:</div>
+            <div className="i2">Lock Time:</div>
+            <div className="i3">Fee Rate:</div>
             <div className="bt"><button onClick={this.delegateCalc.bind(this)}>Calculate</button></div>
             <div className="i11"><input placeholder="Lock Amount In Wan Coins"
               ref={(input) => { this.delegateAmount = input }}
             ></input></div>
-            <div className="i31"><input placeholder="Lock Time In Epochs"
-            value="7" readOnly={true}></input></div>
-            <div className="i21"><input placeholder="Delegator's Fee Rate 10 (%)"
+            <div className="i21"><input placeholder="Lock Time In Epochs"
+            ref={(input) => { this.delegateLockTime = input }}
+            ></input></div>
+            <div className="i31"><input placeholder="Delegator's Fee Rate 10 (%)"
               ref={(input) => { this.delegateFeeRate = input }}
 
             ></input></div>
