@@ -1,7 +1,7 @@
 .LeaderBoard {
   min-height: 300px;
   border-radius: 2vh;
-  background-color: rgb(210, 209, 209);
+  background-color: rgb(59, 96, 121);
   margin: 1vh 0vh 0vh 0vh;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .LeaderBoardTitle {
-  border-bottom: 1px solid rgb(174, 167, 167);
+  /* border-bottom: 1px solid rgb(174, 167, 167); */
   color: rgb(2, 2, 2);
 }
 
@@ -19,5 +19,9 @@
 }
 
 Table {
-  color: rgb(12, 70, 51);
+  color: rgb(252, 252, 252);
+}
+
+.ant-table-column-title {
+  color: rgb(255, 255, 255);
 }

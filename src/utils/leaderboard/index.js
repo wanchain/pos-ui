@@ -41,30 +41,41 @@ class LeaderBoard extends Component {
     title: 'Amount',
     dataIndex: 'Amount',
     key: 'Amount',
+    sorter: (a, b) => a.Amount - b.Amount,
   }, {
     title: 'Start Epoch',
     dataIndex: 'StakingEpoch',
     key: 'StakingEpoch',
+    sorter: (a, b) => a.StakingEpoch - b.StakingEpoch,
   }, {
     title: 'Lock Epoch',
     dataIndex: 'LockEpochs',
     key: 'LockEpochs',
+    sorter: (a, b) => a.LockEpochs - b.LockEpochs,
   }, {
     title: 'Next Lock',
     dataIndex: 'NextLockEpochs',
     key: 'NextLockEpochs',
+    sorter: (a, b) => a.NextLockEpochs - b.NextLockEpochs,
   }, {
     title: 'Fee Rate',
     dataIndex: 'FeeRate',
     key: 'FeeRate',
+    sorter: (a, b) => a.FeeRate - b.FeeRate,
   }, {
     title: 'Delegators',
     dataIndex: 'Delegators',
     key: 'Delegators',
+    sorter: (a, b) => a.Delegators - b.Delegators,
   }, {
     title: 'Delegate Percent',
     dataIndex: 'DelegatePercent',
     key: 'DelegatePercent',
+    sorter: (a, b) => {
+      var a0 = Number(a.DelegatePercent.slice(0,a.DelegatePercent.length-1)) 
+      var b0 = Number(b.DelegatePercent.slice(0,b.DelegatePercent.length-1))
+      return a0 - b0
+    },
   }];
 
   render() {
@@ -86,15 +97,20 @@ class LeaderBoard extends Component {
         parnterAmount += Number(value.Partners[i].Amount);
       }
       value.Amount =Number(value.Amount) + Number(parnterAmount)
+      value.key = index
       return value
     })
 
 
     return (
       <div className="LeaderBoard">
-        <div className="LeaderBoardTitle">All Validators</div>
+        {/* <div className="LeaderBoardTitle">Validators</div> */}
         <div className="LeaderBoardBody">
-          <Table dataSource={items} columns={this.columns}></Table>
+          <Table dataSource={items} 
+          columns={this.columns} 
+          size="small" 
+          title={() => 'Validators List'}
+          ></Table>
         </div>
       </div>
     );
