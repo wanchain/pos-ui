@@ -35,45 +35,45 @@ class LeaderBoard extends Component {
 
   columns = [{
     title: 'Address',
-    dataIndex: 'Address',
-    key: 'Address',
+    dataIndex: 'address',
+    key: 'address',
   }, {
     title: 'Amount',
-    dataIndex: 'Amount',
-    key: 'Amount',
-    sorter: (a, b) => a.Amount - b.Amount,
+    dataIndex: 'amount',
+    key: 'amount',
+    sorter: (a, b) => a.amount - b.amount,
   }, {
     title: 'Start Epoch',
-    dataIndex: 'StakingEpoch',
-    key: 'StakingEpoch',
-    sorter: (a, b) => a.StakingEpoch - b.StakingEpoch,
+    dataIndex: 'stakingEpoch',
+    key: 'stakingEpoch',
+    sorter: (a, b) => a.stakingEpoch - b.stakingEpoch,
   }, {
     title: 'Lock Epoch',
-    dataIndex: 'LockEpochs',
-    key: 'LockEpochs',
-    sorter: (a, b) => a.LockEpochs - b.LockEpochs,
+    dataIndex: 'lockEpochs',
+    key: 'lockEpochs',
+    sorter: (a, b) => a.lockEpochs - b.lockEpochs,
   }, {
     title: 'Next Lock',
-    dataIndex: 'NextLockEpochs',
-    key: 'NextLockEpochs',
-    sorter: (a, b) => a.NextLockEpochs - b.NextLockEpochs,
+    dataIndex: 'nextLockEpochs',
+    key: 'nextLockEpochs',
+    sorter: (a, b) => a.nextLockEpochs - b.nextLockEpochs,
   }, {
     title: 'Fee Rate',
-    dataIndex: 'FeeRate',
-    key: 'FeeRate',
-    sorter: (a, b) => a.FeeRate - b.FeeRate,
+    dataIndex: 'feeRate',
+    key: 'feeRate',
+    sorter: (a, b) => a.feeRate - b.feeRate,
   }, {
     title: 'Delegators',
-    dataIndex: 'Delegators',
-    key: 'Delegators',
-    sorter: (a, b) => a.Delegators - b.Delegators,
+    dataIndex: 'delegators',
+    key: 'delegators',
+    sorter: (a, b) => a.delegators - b.delegators,
   }, {
     title: 'Delegate Percent',
-    dataIndex: 'DelegatePercent',
-    key: 'DelegatePercent',
+    dataIndex: 'delegatePercent',
+    key: 'delegatePercent',
     sorter: (a, b) => {
-      var a0 = Number(a.DelegatePercent.slice(0,a.DelegatePercent.length-1)) 
-      var b0 = Number(b.DelegatePercent.slice(0,b.DelegatePercent.length-1))
+      var a0 = Number(a.delegatePercent.slice(0,a.delegatePercent.length-1)) 
+      var b0 = Number(b.delegatePercent.slice(0,b.delegatePercent.length-1))
       return a0 - b0
     },
   }];
@@ -83,20 +83,20 @@ class LeaderBoard extends Component {
 
     const items = snap.map((value, index) => {
       let delegateAmount = 0
-      for (let i = 0; i < value.Clients.length; i++) {
-        delegateAmount += Number(value.Clients[i].Amount);
+      for (let i = 0; i < value.clients.length; i++) {
+        delegateAmount += Number(value.clients[i].amount);
       }
       //delegateAmount /= 1e18;
-      let delePercent = delegateAmount * 100 / (value.Amount * 5)
+      let delePercent = delegateAmount * 100 / (value.amount * 5)
 
-      value.Delegators = value.Clients.length
-      value.DelegatePercent = delePercent.toFixed(0) + '%'
+      value.delegators = value.clients.length
+      value.delegatePercent = delePercent.toFixed(0) + '%'
 
       let parnterAmount = 0
-      for (let i = 0; i < value.Partners.length; i++) {
-        parnterAmount += Number(value.Partners[i].Amount);
+      for (let i = 0; i < value.partners.length; i++) {
+        parnterAmount += Number(value.partners[i].amount);
       }
-      value.Amount =Number(value.Amount) + Number(parnterAmount)
+      value.amount =Number(value.amount) + Number(parnterAmount)
       value.key = index
       return value
     })

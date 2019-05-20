@@ -7,24 +7,24 @@ class ValidatorInfoQuery extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      Address: "N/A",
-      Amount: 0,
-      Clients: [],
-      FeeRate: 0,
-      LockEpochs: 0,
-      StakingEpoch: 0
+      address: "N/A",
+      amount: 0,
+      clients: [],
+      feeRate: 0,
+      lockEpochs: 0,
+      stakingEpoch: 0
     }
   }
 
   validatorInfoQuery() {
     console.log('addrWorkingHistoryQuery')
     this.setState({
-      Address: "Waiting",
-      Amount: 0,
-      Clients: [],
-      FeeRate: 0,
-      LockEpochs: 0,
-      StakingEpoch: 0
+      address: "Waiting",
+      amount: 0,
+      clients: [],
+      feeRate: 0,
+      lockEpochs: 0,
+      stakingEpoch: 0
     })
 
     let address = this.addr.value
