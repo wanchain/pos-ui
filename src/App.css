@@ -3,6 +3,8 @@
   /* background-color: #282c34; */
   min-height: 100vh;
 
+  max-width: 1440px;
+  margin: auto;
   display: grid;
   grid-template-columns: 0.1fr 4fr 0.1fr;
   grid-template-rows: 0.1fr 0.1fr 2.2fr 0.1fr;
