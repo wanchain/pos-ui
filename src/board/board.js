@@ -46,6 +46,7 @@ class Board extends Component {
         curEpochStartTime: result.curEpochStartTime,
         nextEpochStartTime: result.nextEpochStartTime,
         stableBlock: result.stableBlock,
+        lastEpochSlotActivity: result.lastEpochSlotActivity,
       });
     }.bind(this));
   }
@@ -76,7 +77,7 @@ class Board extends Component {
         <div className="epochPercent"><Statistic title="Epoch Percent" value={this.state.epochPercent + '%'}/></div>
         {/* <div className="curEpochTimeValue"><Statistic title="Current Epoch Start" value={(new Date(this.state.curEpochStartTime*1000)).toLocaleString()} /></div> */}
         {/* <div className="nextEpochTimeValue"><Statistic title="Next Epoch Start" value={(new Date(this.state.nextEpochStartTime*1000)).toLocaleString()} /></div> */}
-        <div className="sbkV"><Statistic title="Stable Block" value={this.state.stableBlock} /></div>
+        <div className="sbkV"><Statistic title="Last Activity" value={this.state.lastEpochSlotActivity} /></div>
       </div>
     );
   }
