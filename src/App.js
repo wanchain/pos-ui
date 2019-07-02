@@ -4,7 +4,7 @@ import Title from './title/title'
 import Board from './board/board'
 import Utils from './utils/utils'
 
-window.serverUrl = "http://192.168.1.58:8000/"
+window.serverUrl = "http://localhost:8000/"
 
 class App extends Component {
   componentDidMount() {
