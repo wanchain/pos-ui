@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../reward/rewardMiner.css';
 import $ from 'jquery';
-import { message } from 'antd';
+import { message, List } from 'antd';
 
 
 
@@ -71,7 +71,22 @@ class UserHistoryQuery extends Component {
 
             ></input></div>
           </div>
-          <div className="o">{JSON.stringify(this.state, null, 4)}</div>
+          <div className="o">
+            <List
+              size="small"
+              header={<div>Selected Epochs</div>}
+              bordered
+              dataSource={this.state.workingEpoch}
+              renderItem={item => <List.Item>{item}</List.Item>}
+            />
+            <List
+              size="small"
+              header={<div>Unselected Epochs</div>}
+              bordered
+              dataSource={this.state.disworkingEpoch}
+              renderItem={item => <List.Item>{item}</List.Item>}
+            />
+          </div>
         </div>
       </div>
     );
