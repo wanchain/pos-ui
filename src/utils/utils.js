@@ -19,7 +19,7 @@ class Utils extends Component {
   render() {
     return (
       <div className="Utils">
-        <LeaderBoard />
+        {/* <LeaderBoard /> */}
         <p></p>
         <p>In the calculators below, the values are dynamic estimates of future values based on the current available date. </p>
         <p>The actual future values may differ from these estimates due to the behavior of other participants in the staking ecosystem. </p>
@@ -28,7 +28,7 @@ class Utils extends Component {
         <RewardDelegate />
         <RewardQuery />
         <ActivityQuery />
-        <UserHistoryQuery />
+        {/* <UserHistoryQuery /> */}
         {/* <ValidatorInfoQuery /> */}
       </div>
     );
