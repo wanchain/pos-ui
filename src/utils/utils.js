@@ -28,8 +28,8 @@ class Utils extends Component {
         <RewardDelegate />
         <RewardQuery />
         <ActivityQuery />
-        {/* <UserHistoryQuery />
-        <ValidatorInfoQuery /> */}
+        <UserHistoryQuery />
+        {/* <ValidatorInfoQuery /> */}
       </div>
     );
   }
