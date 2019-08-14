@@ -21,9 +21,9 @@ class Utils extends Component {
       <div className="Utils">
         <LeaderBoard />
         <p></p>
-        <p>In the calculator below, the values are estimated and may differ from the actual values.</p>
-        <p>these are dynamic estimates which can change at any time according to behaviors of other participants.</p>
-        <p>Because of the probability, Rewards are only close to our estimates value when they work long days.</p>
+        <p>In the calculators below, the values are dynamic estimates of future values based on the current available date. </p>
+        <p>The actual future values may differ from these estimates due to the behavior of other participants in the staking ecosystem. </p>
+        <p>Due to this, estimates may be less accurate over longer periods of time.</p>
         <RewardMiner />
         <RewardDelegate />
         <RewardQuery />
