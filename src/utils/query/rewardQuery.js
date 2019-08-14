@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../reward/rewardMiner.css';
 import $ from 'jquery';
-import { message } from 'antd';
+import { message, Statistic } from 'antd';
 
 
 
@@ -66,7 +66,9 @@ class RewardQuery extends Component {
               ref={(input) => { this.endEpoch = input }}
             ></input></div>
           </div>
-          <div className="o">{JSON.stringify(this.state, null, 4)}</div>
+          <div className="o">
+            <Statistic title="Reward" value={this.state.addrReward}/>
+          </div>
         </div>
       </div>
     );

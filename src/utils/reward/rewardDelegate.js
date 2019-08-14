@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './rewardMiner.css';
 import $ from 'jquery';
-import { message } from 'antd';
+import { message, Statistic } from 'antd';
 
 
 
@@ -81,7 +81,10 @@ class RewardDelegate extends Component {
 
             ></input></div>
           </div>
-          <div className="o">{JSON.stringify(this.state, null, 4)}</div>
+          <div className="o">
+            <Statistic title="Total Reward" value={this.state.delegateTotalReward}/>
+            <Statistic title="Reward Rate" value={this.state.delegateRewardRate}/>
+          </div>
         </div>
       </div>
     );

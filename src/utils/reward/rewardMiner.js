@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './rewardMiner.css';
 import $ from 'jquery';
-import { message } from 'antd';
+import { message, Statistic } from 'antd';
 
 class Reward extends Component {
   constructor(props) {
@@ -70,7 +70,10 @@ class Reward extends Component {
             ></input></div>
             <div className="i31"></div>
           </div>
-          <div className="o">{JSON.stringify(this.state, null, 4)}</div>
+          <div className="o">
+            <Statistic title="Total Reward" value={this.state.minerTotalReward}/>
+            <Statistic title="Reward Rate" value={this.state.minerRewardRate}/>
+          </div>
         </div>
       </div>
     );

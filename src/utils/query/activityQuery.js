@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../reward/rewardMiner.css';
 import $ from 'jquery';
-import { message } from 'antd';
+import { message, Statistic } from 'antd';
 
 
 
@@ -78,7 +78,11 @@ class ActivityQuery extends Component {
 
             ></input></div>
           </div>
-          <div className="o">{JSON.stringify(this.state, null, 4)}</div>
+          <div className="o">
+            <Statistic title="Mined blocks" value={this.state.addrMine}/>
+            <Statistic title="Active EL" value={this.state.addrEp}/>
+            <Statistic title="Active RNP" value={this.state.addrRp}/>
+          </div>
         </div>
       </div>
     );

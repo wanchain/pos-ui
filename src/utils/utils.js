@@ -20,6 +20,10 @@ class Utils extends Component {
     return (
       <div className="Utils">
         <LeaderBoard />
+        <p></p>
+        <p>In the calculator below, the values are estimated and may differ from the actual values.</p>
+        <p>these are dynamic estimates which can change at any time according to behaviors of other participants.</p>
+        <p>Because of the probability, Rewards are only close to our estimates value when they work long days.</p>
         <RewardMiner />
         <RewardDelegate />
         <RewardQuery />

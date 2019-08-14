@@ -48,6 +48,8 @@
   grid-area: o; 
   background-color: rgb(47, 78, 79);
   border-radius: 2vh;
+  display: flex;
+  justify-content: center;
 }
 
 .ant-message {
