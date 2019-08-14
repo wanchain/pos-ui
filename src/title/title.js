@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import './title.css';
+import {Tag} from 'antd';
 
 class Title extends Component {
   render() {
     return (
       <div className="title">
-        Wanchain PoS Explorer
+        <div>Wanchain PoS Explorer</div>
+        <Tag color="#2db7f5" className="tags">Testnet</Tag>
+        {/* <Tag color="#2db7f5" className="tags">Mainnet</Tag> */}
+
       </div>
     );
   }

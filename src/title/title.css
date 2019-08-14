@@ -5,4 +5,11 @@
   color: rgb(31, 230, 230);
   padding: 0vh;
   margin: 1vh;
+  display: flex;
+  justify-content: center;
+}
+
+.tags {
+  height: 22px;
+  margin: 20px;
 }
