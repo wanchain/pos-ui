@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './utils.css';
 import RewardMiner from './reward/rewardMiner'
+import RewardValidator from './reward/rewardValidator'
 import RewardDelegate from './reward/rewardDelegate'
 import RewardQuery from './query/rewardQuery'
 import ActivityQuery from './query/activityQuery'
@@ -25,6 +26,7 @@ class Utils extends Component {
         <p>The actual future values may differ from these estimates due to the behavior of other participants in the staking ecosystem. </p>
         <p>Due to this, estimates may be less accurate over longer periods of time.</p>
         <RewardMiner />
+        <RewardValidator />
         <RewardDelegate />
         <RewardQuery />
         <ActivityQuery />

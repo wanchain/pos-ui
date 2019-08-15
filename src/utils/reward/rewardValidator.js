@@ -18,6 +18,8 @@ class Reward extends Component {
 
     let amount = this.minerLockAmount.value
     let locktime = this.minerLockTime.value
+    let delegateAmount = this.delegateAmount.value
+    let feeRate = this.feeRate.value
 
     if (locktime < 7 || locktime > 90) {
       message.error('Lock Time value must in range [7 ~ 90]');
@@ -34,7 +36,7 @@ class Reward extends Component {
       minerRewardRate: 'Waiting',
     })
 
-    this.serverRequest = $.get(window.serverUrl + 'minerCalc?amount=' + amount + '&locktime=' + locktime,
+    this.serverRequest = $.get(window.serverUrl + 'minerValidator?amount=' + amount + '&locktime=' + locktime + '&delegateAmount=' + delegateAmount + '&feeRate=' + feeRate,
       function (result) {
         console.log(result)
         if (result["minerTotalReward"] === undefined) {
@@ -54,12 +56,14 @@ class Reward extends Component {
   render() {
     return (
       <div className="Reward">
-        <div className="rewardTitle">Non-delegation Validator Reward Estimate</div>
+        <div className="rewardTitle">Delegation Validator Reward Estimate</div>
         <div className="rewardGrid">
           <div className="i">
             <div className="i1">Amount:</div>
             <div className="i2">Lock Time:</div>
-            <div className="i3"></div>
+            <div className="i3">Delegation Amount:</div>
+            <div className="i4">Fee Rate:</div>
+
             <div className="bt"><button onClick={this.minerCalc.bind(this)}>Calculate</button></div>
             <div className="i11">
               <input placeholder="Lock Amount In Wan Coins"
@@ -68,7 +72,12 @@ class Reward extends Component {
             <div className="i21"><input placeholder="Lock Time In Epochs"
               ref={(input) => { this.minerLockTime = input }}
             ></input></div>
-            <div className="i31"></div>
+            <div className="i31"><input placeholder="Delegation Amount in Wan Coins"
+              ref={(input) => { this.delegateAmount = input }}
+            ></input></div>
+            <div className="i41"><input placeholder="Commission Percentage"
+              ref={(input) => { this.feeRate = input }}
+            ></input></div>
           </div>
           <div className="o">
             <Statistic title="Total Reward" value={this.state.minerTotalReward}/>
